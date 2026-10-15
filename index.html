@@ -304,6 +304,24 @@ summary{min-height:44px;align-items:center}
  .p .price{font-size:36px}
 }
 @media(max-height:480px) and (orientation:landscape){.hero{padding:40px 0 56px}section{padding:56px 0}}
+
+/* ===== Mejoras CRO: testimonios, boton flotante, footer, terminos ===== */
+.rc{position:relative;overflow:hidden;opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s,box-shadow .25s,border-color .25s}
+.rc::before{content:"\201C";position:absolute;right:18px;top:-6px;font-size:96px;line-height:1;font-weight:800;color:var(--cy);opacity:.18;pointer-events:none}
+.rv.in .rc{opacity:1;transform:none}
+.rv.in .rc:nth-child(2){transition-delay:.15s,.15s,0s,0s}.rv.in .rc:nth-child(3){transition-delay:.3s,.3s,0s,0s}
+.rv.in .rc:hover{transform:translateY(-4px);box-shadow:0 16px 36px #0A11281A;border-color:var(--cy)}
+.rc .st{color:#FBBC04;font-size:22px;letter-spacing:3px}
+.rc p{font-size:17px;line-height:1.55}
+.rc footer span{display:block}
+@media(max-width:600px){.rv{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:14px;margin:32px -20px 0;padding:4px 20px 14px;-webkit-overflow-scrolling:touch}.rc{flex:0 0 84%;scroll-snap-align:center}}
+.fab{right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));animation:fabp 2.6s ease-out infinite}
+@keyframes fabp{0%{box-shadow:0 8px 24px #0A112855,0 0 0 0 #25D366AA}70%,100%{box-shadow:0 8px 24px #0A112855,0 0 0 18px #25D36600}}
+.fk a,footer .w>span>a{text-decoration:underline;text-underline-offset:3px}.fk a:hover,footer a:hover{color:#fff}
+dialog{margin:auto;border:0;border-radius:18px;padding:28px;width:min(560px,92vw);color:var(--navy);box-shadow:0 30px 80px #0008}
+dialog::backdrop{background:#0A1128CC}
+dialog h3{font-size:22px;font-weight:800;margin-bottom:14px}
+dialog ul{padding-left:20px;margin-bottom:22px;font-size:15px;color:var(--mut)}dialog li{margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -311,7 +329,7 @@ summary{min-height:44px;align-items:center}
 <nav><div class="w">
 <a class="logo" href="#inicio" aria-label="TargetBiz inicio"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#fff"/><rect x="20" y="12" width="16" height="24" fill="#fff"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg><span>Target<b>Biz</b></span></a>
 <ul id="mnl"><li><a href="#resenas">Reseñas</a></li><li><a href="#productos">Productos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#packs">Packs</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#faq">Preguntas</a></li></ul>
-<a class="btn" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar</a>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar</a>
 <button class="mnu" id="mnu" aria-label="Abrir menú" aria-expanded="false" aria-controls="mnl"><span></span><span></span><span></span></button>
 </div></nav>
 
@@ -319,7 +337,7 @@ summary{min-height:44px;align-items:center}
 <div>
 <h1>Tu negocio, a un toque<i>.</i></h1>
 <p>Tarjetas NFC para reseñas, bots de WhatsApp, páginas web y Google Business. Tecnología simple para que más clientes te encuentren y te elijan.</p>
-<div class="btns"><a class="btn wa" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
+<div class="btns"><a class="btn wa" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
 </div>
 <div class="card" role="img" aria-label="Tarjeta NFC de TargetBiz enviando una reseña de cinco estrellas">
 <svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#0A1128"/><rect x="20" y="12" width="16" height="24" fill="#0A1128"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg>
@@ -328,10 +346,10 @@ summary{min-height:44px;align-items:center}
 </div></header>
 
 <div class="stats"><div class="w">
-<div><b data-n="4">0</b><span>servicios en un solo lugar</span></div>
-<div><b><em style="font-style:normal" data-n="24">0</em>/7</b><span>atención automática con bot</span></div>
-<div><b data-n="1">0</b><span>toque para dejar una reseña</span></div>
-<div><b data-n="3">0</b><span>packs para elegir</span></div>
+<div><b><em style="font-style:normal" data-n="4">4</em>+</b><span>servicios en un solo lugar</span></div>
+<div><b><em style="font-style:normal" data-n="24">24</em>/7</b><span>atención automática con bot</span></div>
+<div><b data-n="1">1</b><span>toque para dejar una reseña</span></div>
+<div><b data-n="3">3</b><span>packs para elegir</span></div>
 </div></div>
 
 <section id="resenas" class="dk"><div class="w two">
@@ -384,13 +402,13 @@ summary{min-height:44px;align-items:center}
 <div class="grid">
 <div class="p"><h4>Pack Básico</h4><div class="price">$20.000</div><small>Pago único</small>
 <ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Configuración del código QR de respaldo</li></ul>
-<a class="btn" data-wa="Hola, quiero cotizar el Pack Básico"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Básico</a></div>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20el%20Pack%20B%C3%A1sico" data-wa="Hola, quiero cotizar el Pack Básico"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Básico</a></div>
 <div class="p rec"><span class="tag">Más pedido</span><h4>Pack Pro</h4><div class="price">$25.000</div><small>Pago único</small>
 <ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Código QR de respaldo</li><li>Creamos tu Google Business Profile por ti</li><li>Listo para recibir reseñas desde el primer día</li></ul>
-<a class="btn" data-wa="Hola, quiero cotizar el Pack Pro"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Pro</a></div>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20el%20Pack%20Pro" data-wa="Hola, quiero cotizar el Pack Pro"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Pro</a></div>
 <div class="p"><h4>Bot de WhatsApp</h4><div class="price">$30.000</div><small>Creación, más $10.000 al mes</small>
 <ul><li>Creación y configuración del bot</li><li>Responde precios, horarios y preguntas frecuentes</li><li>Atención y mantención 24/7 incluidas en la mensualidad</li></ul>
-<a class="btn" data-wa="Hola, quiero cotizar el Bot de WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Bot</a></div>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20me%20interesa%20el%20Bot%20de%20WhatsApp" data-wa="Hola, me interesa el Bot de WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Bot</a></div>
 </div>
 </div></section>
 
@@ -400,11 +418,11 @@ summary{min-height:44px;align-items:center}
 <ol class="tl" id="tl">
 <li><span>1</span><em>Tú</em><h4>Nos escribes</h4><p>Cuéntanos de tu negocio y qué necesitas. Te respondemos por WhatsApp.</p></li>
 <li><span>2</span><em>Nosotros</em><h4>Te cotizamos</h4><p>Recibes el precio final y el plazo de entrega, sin letra chica.</p></li>
-<li><span>3</span><em>Tú</em><h4>Confirmas y pagas</h4><p>Pagas por [medios de pago] y damos inicio a tu pedido.</p></li>
+<li><span>3</span><em>Tú</em><h4>Confirmas y pagas</h4><p>Pagas por transferencia bancaria y damos inicio a tu pedido.</p></li>
 <li><span>4</span><em>Nosotros</em><h4>Lo producimos</h4><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p></li>
 <li><span>5</span><em>Nosotros</em><h4>Entrega y soporte</h4><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p></li>
 </ol>
-<p style="margin-top:20px"><a class="btn wa" data-wa="Hola, quiero empezar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Empezar por WhatsApp</a></p>
+<p style="margin-top:20px"><a class="btn wa" href="https://wa.me/56938766298?text=Hola,%20quiero%20empezar%20con%20TargetBiz" data-wa="Hola, quiero empezar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Empezar por WhatsApp</a></p>
 </div></section>
 
 <section id="faq" style="background:var(--bg)"><div class="w">
@@ -412,33 +430,44 @@ summary{min-height:44px;align-items:center}
 <div style="margin-top:40px">
 <details><summary>¿Necesito una app para usar la tarjeta NFC?</summary><p>No. Tu cliente solo acerca el celular a la placa o al llavero y se abre tu página de reseñas de Google. Funciona con el NFC que traen la mayoría de los celulares de los últimos años.</p></details>
 <details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, con ambos. Si el celular no tiene NFC, tu cliente puede escanear el código QR de respaldo.</p></details>
-<details><summary>¿Cuánto demora la entrega?</summary><p>[plazo]. Te confirmamos la fecha exacta al cotizar, antes de pagar.</p></details>
-<details><summary>¿Cómo se paga?</summary><p>[medios de pago]. Coordinamos todo por WhatsApp y confirmas el valor final antes de pagar.</p></details>
+<details><summary>¿Cuánto demora la entrega?</summary><p>24 a 48 horas hábiles según el pack. Te confirmamos la fecha exacta al cotizar, antes de pagar.</p></details>
+<details><summary>¿Cómo se paga?</summary><p>Por transferencia bancaria. Coordinamos todo por WhatsApp y confirmas el valor final antes de pagar.</p></details>
 <details><summary>¿Sirve para cualquier negocio?</summary><p>Sí. Está pensado para negocios locales, como salones, restaurantes, clínicas, talleres y tiendas, que quieren más reseñas y más clientes.</p></details>
 </div></div></section>
 
-<section id="clientes" hidden><div class="w">
-<h2>Lo que dicen nuestros clientes</h2>
-<p class="lead">Reseñas reales de nuestro perfil en Google.</p>
+<section id="clientes"><div class="w">
+<h2 id="rt">Lo que dicen nuestros clientes</h2>
+<p class="lead" id="rl">Reseñas reales de nuestro perfil en Google.</p>
 <div class="rv" id="rv"></div>
-<p style="margin-top:36px"><a class="btn" id="gl" target="_blank" rel="noopener" style="background:var(--navy);color:#fff">Ver todas las reseñas en Google</a></p>
+<p style="margin-top:36px" id="glp"><a class="btn" id="gl" target="_blank" rel="noopener" style="background:var(--navy);color:#fff">Ver todas las reseñas en Google</a></p>
 </div></section>
 
 <section class="cta" id="contacto"><div class="w">
 <h2>Hablemos de tu negocio</h2>
 <p>Escríbenos y recibe una cotización sin costo.<br>También puedes llamar o escribir al +56 9 3876 6298.</p>
-<a class="btn" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
 </div></section>
 
-<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span>+56 9 3876 6298 · <a href="#">Instagram</a></span></div></footer>
+<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span class="fk"><a href="#terminos" id="tos">Términos del Servicio</a> · Medios de pago: Transferencia bancaria</span><span>+56 9 3876 6298 · <a href="#">Instagram</a></span></div></footer>
 
-<a class="btn fab" data-wa="Hola, quiero cotizar con TargetBiz" aria-label="Escribir por WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
+<dialog id="terminos" aria-labelledby="tt"><h3 id="tt">Términos del Servicio</h3>
+<ul>
+<li>Los precios publicados son referenciales. El valor final se confirma por WhatsApp al cotizar.</li>
+<li>Medio de pago: transferencia bancaria.</li>
+<li>Plazo de entrega: 24 a 48 horas hábiles según el pack. Confirmamos la fecha exacta al cotizar.</li>
+<li>Pack Básico y Pack Pro son de pago único.</li>
+<li>Bot de WhatsApp: $30.000 de creación más $10.000 mensuales, que incluyen atención y mantención.</li>
+<li>Si algo falla, te ayudamos por WhatsApp: +56 9 3876 6298.</li>
+</ul>
+<button class="btn" id="tc" type="button">Entendido</button></dialog>
+
+<a class="btn fab" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz" aria-label="Escribir por WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>WhatsApp</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="models3d.js" defer></script>
 <script>
 const CFG={wa:'56938766298'};
-document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
+document.querySelectorAll('[data-wa]').forEach(a=>{if(!a.getAttribute('href'))a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const io=new IntersectionObserver(es=>es.forEach(e=>{
   if(!e.isIntersecting)return;io.unobserve(e.target);
@@ -457,16 +486,22 @@ const GOOGLE_URL='https://share.google/kWhb3aleQxaSUOHN7';
 const REVIEWS=[
 /* Pega aquí tus reseñas reales, textuales: {n:'Nombre',s:5,t:'Texto de la reseña',d:'oct 2026'}, */
 ];
+const DEMO_REVIEWS=[
+{n:'Dueño de barbería',b:'Barbería',s:5,t:'Pusimos la placa en el mostrador y ahora los clientes dejan su reseña en segundos, sin instalar nada.',d:'Ejemplo ilustrativo'},
+{n:'Dueña de salón de belleza',b:'Salón de belleza',s:5,t:'El bot responde precios y horarios mientras atiendo. Llegan más reservas y yo no paro de trabajar.',d:'Ejemplo ilustrativo'},
+{n:'Administrador de restaurante',b:'Restaurante',s:5,t:'Aparecer con buenas estrellas en Google nos trajo mesas nuevas. Todo quedó listo y funcionando.',d:'Ejemplo ilustrativo'}];
 (function(){const sec=document.getElementById('clientes');document.getElementById('gl').href=GOOGLE_URL;
-const list=REVIEWS.slice().sort((a,b)=>b.s-a.s).slice(0,6);if(!list.length)return;
+const real=REVIEWS.length>0,list=(real?REVIEWS:DEMO_REVIEWS).slice().sort((a,b)=>b.s-a.s).slice(0,6);
+if(!real){document.getElementById('rt').textContent='Así se verán las reseñas de tus clientes';document.getElementById('rl').textContent='Ejemplos ilustrativos de cómo luce un negocio con buenas reseñas.';document.getElementById('glp').hidden=true}
 const box=document.getElementById('rv');
 list.forEach(r=>{const c=document.createElement('article');c.className='rc';
 const st=document.createElement('div');st.className='st';st.textContent='★'.repeat(r.s)+'☆'.repeat(5-r.s);st.setAttribute('aria-label',r.s+' de 5 estrellas');
 const p=document.createElement('p');p.textContent=r.t;
 const f=document.createElement('footer');const i=document.createElement('i');i.textContent=r.n.charAt(0).toUpperCase();
-const d=document.createElement('div');const b=document.createElement('b');b.textContent=r.n;d.append(b,r.d||'');
+const d=document.createElement('div');const b=document.createElement('b');b.textContent=r.n;d.append(b,(r.b?r.b+' · ':'')+(r.d||''));
 f.append(i,d);c.append(st,p,f);box.append(c)});
-sec.hidden=false})();
+sec.hidden=false;
+if(still)box.classList.add('in');else new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.2}).observe(box)})();
 (function(){const b=document.getElementById('bot');if(!b)return;
 const eyes=b.querySelector('#eyes'),bub=document.getElementById('bub');
 const msgs=['¡Hola! Soy el bot de TargetBiz. Haz clic en mí.','Respondo precios y horarios, de día y de noche.','Agendo horas mientras tú atiendes a tus clientes.','¿Quieres uno para tu negocio? Escríbenos por WhatsApp.'];let k=0;
@@ -476,6 +511,10 @@ b.addEventListener('click',()=>{k=(k+1)%msgs.length;bub.textContent=msgs[k];b.cl
 if(!still)(function bl(){setTimeout(()=>{b.classList.add('blink');setTimeout(()=>b.classList.remove('blink'),130);bl()},2500+Math.random()*2500)})();
 })();
 
+(function(){const d=document.getElementById('terminos'),a=document.getElementById('tos');if(!d||!a)return;
+a.addEventListener('click',e=>{e.preventDefault();d.showModal?d.showModal():d.setAttribute('open','')});
+document.getElementById('tc').addEventListener('click',()=>d.close?d.close():d.removeAttribute('open'));
+d.addEventListener('click',e=>{if(e.target===d&&d.close)d.close()})})();
 (function(){const b=document.getElementById('mnu'),u=document.getElementById('mnl');if(!b||!u)return;
 function set(o){u.classList.toggle('open',o);b.setAttribute('aria-expanded',o);b.setAttribute('aria-label',o?'Cerrar menú':'Abrir menú')}
 b.addEventListener('click',()=>set(!u.classList.contains('open')));
