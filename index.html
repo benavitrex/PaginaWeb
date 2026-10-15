@@ -90,14 +90,38 @@ details p{color:var(--mut);margin-top:12px}
 footer{background:var(--navy);color:#94A3B8;font-size:14px;padding:28px 0;border-top:1px solid #1C2650}
 footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .fab{position:fixed;right:20px;bottom:20px;z-index:20;box-shadow:0 8px 24px #0A112855}
-@media(max-width:820px){nav ul{display:none}.hero .w{grid-template-columns:1fr}.hero{padding:64px 0 88px}section{padding:72px 0}}
+.card{animation:fl 6s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px)}}
+.two{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+.dk{background:var(--navy);color:#fff}.dk .lead{color:#CBD5E1}
+.study{margin-top:32px;padding:24px;border-left:4px solid var(--cy);background:var(--bg)}
+.study b{display:block;font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.study p{margin:8px 0;font-size:16px}.study small{display:block;color:var(--mut);font-size:13px;line-height:1.5}
+.study a{color:#0077A8;text-decoration:underline}
+.dk .study{background:var(--navy2);color:#fff}.dk .study a{color:var(--cy)}.dk .study small{color:#94A3B8}
+.phone{width:280px;margin:auto;background:#1B2550;border-radius:38px;padding:12px;box-shadow:0 24px 60px #0007}
+.scr{background:#fff;color:var(--navy);border-radius:28px;padding:18px 14px;min-height:430px}
+.sb{background:var(--bg);border-radius:999px;padding:9px 14px;font-size:13px;color:var(--mut);margin-bottom:14px}
+.res{border:1px solid var(--line);border-radius:12px;padding:12px;margin-bottom:10px;font-size:14px;opacity:0;animation:rin 9s infinite}
+.res b{display:block;font-weight:800}.res span{color:#B7791F;font-size:13px}
+.res.top{border-color:var(--cy);box-shadow:0 0 0 3px #00C2FF33}
+.res:nth-child(2){animation-delay:.2s}.res:nth-child(3){animation-delay:.9s}.res:nth-child(4){animation-delay:1.6s}
+@keyframes rin{0%{opacity:0;transform:translateY(12px)}8%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
+.m{max-width:84%;padding:10px 13px;border-radius:14px;font-size:14px;margin-bottom:10px;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.m.show{opacity:1;transform:none}.m.c{background:var(--bg)}.m.b{background:var(--navy);color:#fff;margin-left:auto}
+#fotos figure{margin:0}#fotos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:16px;display:block}
+#fotos figcaption{margin-top:12px;font-weight:800;font-size:16px}
+.bl{list-style:none;margin-top:8px}.bl li{padding:6px 0 6px 28px;position:relative}
+.bl li::before{content:"✓";position:absolute;left:0;color:#0077A8;font-weight:800}
+@media(prefers-reduced-motion:reduce){.res{opacity:1}.m{opacity:1;transform:none}}
+@media(max-width:820px){nav ul{display:none}.hero .w,.two{grid-template-columns:1fr}.hero{padding:64px 0 88px}section{padding:72px 0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.chip{opacity:1}.tl::before{transform:scaleY(1)}}
 </style>
 </head>
 <body>
 <nav><div class="w">
 <a class="logo" href="#inicio" aria-label="TargetBiz inicio"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#fff"/><rect x="20" y="12" width="16" height="24" fill="#fff"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg><span>Target<b>Biz</b></span></a>
-<ul><li><a href="#productos">Productos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#packs">Packs</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#faq">Preguntas</a></li></ul>
+<ul><li><a href="#resenas">Reseñas</a></li><li><a href="#productos">Productos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#packs">Packs</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#faq">Preguntas</a></li></ul>
 <a class="btn" data-wa="Hola, quiero cotizar con TargetBiz">Cotizar</a>
 </div></nav>
 
@@ -119,6 +143,31 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <div><b data-n="1">0</b><span>toque para dejar una reseña</span></div>
 <div><b data-n="3">0</b><span>packs para elegir</span></div>
 </div></div>
+
+<section id="resenas" class="dk"><div class="w two">
+<div><h2>Las reseñas deciden dónde compra la gente</h2>
+<p class="lead">Cuando alguien busca un negocio cerca, mira primero las estrellas. Con una tarjeta NFC, dejar una reseña toma segundos.</p>
+<div class="study"><b>5–9%</b><p>más ingresos por cada estrella adicional en la calificación, según un estudio de Harvard Business School.</p>
+<small>Estudio de Michael Luca (HBS) sobre restaurantes independientes de Seattle entre 2003 y 2009, medido en Yelp, no en Google. Muestra cómo las estrellas influyen en las ventas. Fuente: <a href="https://www.harvardmagazine.com/print/33472?page=all" target="_blank" rel="noopener">Harvard Magazine</a>.</small></div></div>
+<div class="phone" role="img" aria-label="Ilustración de ejemplo: resultados de búsqueda ordenados por estrellas"><div class="scr"><div class="sb">peluquería cerca de mí</div>
+<div class="res top"><b>Salón Aurora</b><span>★★★★★ 4,9 · 128 reseñas</span></div>
+<div class="res"><b>Estudio Norte</b><span>★★★★☆ 4,2 · 31 reseñas</span></div>
+<div class="res"><b>Corte Express</b><span>★★★☆☆ 3,8 · 12 reseñas</span></div>
+<small style="display:block;color:var(--mut);font-size:12px;margin-top:8px">Ejemplo ilustrativo</small></div></div>
+</div></section>
+
+<section id="fotos" hidden><div class="w"><h2>Pensado para negocios reales</h2><div class="grid" style="margin-top:40px">
+<figure><img src="img/cerrando-trato.jpg" alt="Dos personas cerrando un trato con un apretón de manos" loading="lazy"><figcaption>Cierra tratos con confianza</figcaption></figure>
+<figure><img src="img/buscando-en-google.jpg" alt="Persona buscando negocios locales en Google desde su celular" loading="lazy"><figcaption>Que te encuentren cuando buscan</figcaption></figure>
+<figure><img src="img/trabajo-tranquilo.jpg" alt="Trabajador relajado mientras su bot de WhatsApp atiende clientes" loading="lazy"><figcaption>Trabaja tranquilo, el bot responde</figcaption></figure>
+</div></div></section>
+
+<section id="bot" style="background:var(--bg)"><div class="w two">
+<div class="phone" role="img" aria-label="Ilustración de ejemplo: un bot de WhatsApp agenda una hora"><div class="scr chat"><div class="m c">Hola, ¿cuánto cuesta un corte?</div><div class="m b">¡Hola! El corte sale $X.XXX. ¿Quieres agendar?</div><div class="m c">Sí, mañana a las 11:00</div><div class="m b">Listo, quedaste agendado para mañana a las 11:00 ✓</div></div></div>
+<div><h2>Tu bot atiende. Tú trabajas tranquilo.</h2>
+<p class="lead">Mientras estás con un cliente, el bot de WhatsApp responde precios, horarios y agenda por ti, a cualquier hora.</p>
+<ul class="bl"><li>Respuestas inmediatas, de día y de noche</li><li>Menos mensajes repetidos para ti</li><li>Cada consulta termina en una cotización o una hora agendada</li></ul></div>
+</div></section>
 
 <section id="productos"><div class="w">
 <h2>Productos y servicios</h2>
@@ -176,16 +225,16 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section class="cta" id="contacto"><div class="w">
 <h2>Hablemos de tu negocio</h2>
-<p>Escríbenos y recibe una cotización sin costo.</p>
+<p>Escríbenos y recibe una cotización sin costo.<br>También puedes llamar o escribir al +56 9 3876 6298.</p>
 <a class="btn" data-wa="Hola, quiero cotizar con TargetBiz">Escribir por WhatsApp</a>
 </div></section>
 
-<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span><a href="#">Instagram</a></span></div></footer>
+<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span>+56 9 3876 6298 · <a href="#">Instagram</a></span></div></footer>
 
 <a class="btn fab" data-wa="Hola, quiero cotizar con TargetBiz" aria-label="Escribir por WhatsApp">WhatsApp</a>
 
 <script>
-const CFG={wa:'56900000000'};
+const CFG={wa:'56938766298'};
 document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const io=new IntersectionObserver(es=>es.forEach(e=>{
@@ -196,6 +245,11 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{
     (function f(t){const p=Math.min((t-t0)/d,1);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0);}
 }),{threshold:.4});
 document.querySelectorAll('[data-n],#tl').forEach(el=>io.observe(el));
+const ms=[...document.querySelectorAll('.chat .m')];
+if(still)ms.forEach(m=>m.classList.add('show'));
+else(function run(i){if(i<ms.length){ms[i].classList.add('show');setTimeout(()=>run(i+1),1500)}else setTimeout(()=>{ms.forEach(m=>m.classList.remove('show'));setTimeout(()=>run(0),700)},3500)})(0);
+const fo=document.getElementById('fotos');
+fo.querySelectorAll('img').forEach(i=>{const ok=()=>{fo.hidden=false};if(i.complete&&i.naturalWidth)ok();i.addEventListener('load',ok);i.addEventListener('error',()=>i.closest('figure').remove())});
 </script>
 </body>
 </html>

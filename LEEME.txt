@@ -1,0 +1,6 @@
+Sube aqui tus fotos con estos nombres exactos (JPG, 1600x1200 aprox., menos de 300 KB cada una):
+cerrando-trato.jpg       -> manos cerrando un trato / apreton de manos
+buscando-en-google.jpg   -> persona buscando locales en su celular
+trabajo-tranquilo.jpg    -> trabajador relajado mientras el celular o laptop trabaja solo
+Si falta una foto, esa tarjeta no se muestra. Si no hay ninguna, la seccion queda oculta.
+Fuentes gratis para uso comercial: unsplash.com y pexels.com (revisa la licencia de cada foto).
