@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TargetBiz | Tarjetas NFC, Bots WhatsApp y Web para Negocios</title>
+<meta name="description" content="Tarjetas NFC para reseñas de Google, bots de WhatsApp y páginas web para negocios locales. Mira precios y packs, y cotiza por WhatsApp.">
+<meta name="theme-color" content="#0A1128">
+<meta property="og:title" content="TargetBiz | Tu negocio, a un toque">
+<meta property="og:description" content="Tarjetas NFC, bots de WhatsApp, web y Google Business para negocios locales.">
+<meta property="og:image" content="og-image-1200x630.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A1128;--navy2:#121C3F;--cy:#00C2FF;--bg:#F5F8FF;--mut:#475569;--line:#DDE5F5}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font:500 17px/1.6 'Plus Jakarta Sans',system-ui,sans-serif;color:var(--navy);background:#fff}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--cy);outline-offset:3px}
+.w{max-width:1120px;margin:0 auto;padding:0 24px}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;font-weight:800;background:var(--cy);color:var(--navy);transition:transform .2s}
+.btn:hover{transform:translateY(-2px)}
+.btn.o{background:none;border:1.5px solid #3A4672;color:#fff}
+nav{position:sticky;top:0;z-index:10;background:var(--navy);color:#fff}
+nav .w{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{display:flex;align-items:center;gap:10px;font-size:24px;letter-spacing:-.03em}
+.logo svg{width:28px;height:28px}.logo b{font-weight:800}
+nav ul{display:flex;gap:28px;list-style:none;font-size:15px}
+nav ul a:hover{color:var(--cy)}
+nav .btn{padding:10px 20px;font-size:15px}
+.hero{background:var(--navy);color:#fff;padding:96px 0 112px;overflow:hidden}
+.hero .w{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center}
+h1{font-size:clamp(42px,6.2vw,76px);font-weight:800;line-height:1.04;letter-spacing:-.035em}
+h1 i{font-style:normal;color:var(--cy)}
+.hero p{color:#CBD5E1;max-width:46ch;margin:24px 0 36px;font-size:19px}
+.hero .btns{display:flex;gap:14px;flex-wrap:wrap}
+.card{position:relative;width:min(360px,100%);aspect-ratio:1.6;margin:auto;background:var(--navy2);border:1px solid #243059;border-radius:26px;display:grid;place-items:center}
+.card svg{width:84px}
+.card::before,.card::after{content:"";position:absolute;inset:0;border:2px solid var(--cy);border-radius:26px;opacity:0;animation:ring 3.6s ease-out infinite}
+.card::after{animation-delay:1.2s}
+@keyframes ring{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.4);opacity:0}}
+.chip{position:absolute;right:-14px;bottom:-20px;background:var(--cy);color:var(--navy);font-weight:800;font-size:14px;padding:10px 16px;border-radius:999px;opacity:0;animation:pop 7.2s infinite}
+@keyframes pop{0%,12%{opacity:0;transform:translateY(10px)}20%,85%{opacity:1;transform:none}95%,100%{opacity:0}}
+.stats{background:var(--bg);padding:56px 0}
+.stats .w{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px}
+.stats b{display:block;font-size:56px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats span{color:var(--mut);font-size:15px}
+section{padding:96px 0}
+h2{font-size:clamp(30px,4vw,46px);font-weight:800;letter-spacing:-.03em;line-height:1.1;max-width:20ch}
+.lead{color:var(--mut);max-width:56ch;margin:16px 0 48px}
+h3.g{font-size:20px;font-weight:800;margin:40px 0 16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.s{padding:28px;border:1px solid var(--line);border-radius:16px;background:#fff;transition:border-color .2s}
+.s:hover{border-color:var(--cy)}
+.s h4{font-size:20px;font-weight:800;margin-bottom:8px}
+.s p{color:var(--mut);font-size:15px}
+.s .pr{margin-top:18px;font-weight:800}
+.packs{background:var(--bg)}
+.packs .grid{grid-template-columns:repeat(auto-fit,minmax(270px,1fr));align-items:stretch}
+.p{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px;display:flex;flex-direction:column}
+.p.rec{background:var(--navy);color:#fff;border-color:var(--navy)}
+.p h4{font-size:22px;font-weight:800}
+.p .tag{display:inline-block;align-self:flex-start;background:var(--cy);color:var(--navy);font-size:13px;font-weight:800;padding:4px 12px;border-radius:999px;margin-bottom:12px}
+.p .price{font-size:44px;font-weight:800;letter-spacing:-.03em;margin:12px 0 4px}
+.p small{color:var(--mut)}.p.rec small{color:#94A3B8}
+.p ul{list-style:none;margin:24px 0 32px;flex:1}
+.p li{padding:7px 0 7px 26px;position:relative;font-size:15px}
+.p li::before{content:"✓";position:absolute;left:0;color:var(--cy);font-weight:800}
+.p .btn{text-align:center}
+.p:not(.rec) .btn{background:var(--navy);color:#fff}
+.tl{list-style:none;position:relative;margin-top:8px;max-width:640px}
+.tl::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:2px;background:var(--cy);transform:scaleY(0);transform-origin:top;transition:transform 1.6s ease}
+.tl.in::before{transform:scaleY(1)}
+.tl li{position:relative;padding:0 0 36px 64px}
+.tl li span{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
+.tl h4{font-size:19px;font-weight:800}.tl p{color:var(--mut);font-size:15px}
+details{border-bottom:1px solid var(--line);padding:20px 0;max-width:760px}
+summary{cursor:pointer;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";color:var(--cy);font-size:26px;line-height:1;transition:transform .25s}
+details[open] summary::after{transform:rotate(45deg)}
+details p{color:var(--mut);margin-top:12px}
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{margin:0 auto 16px;max-width:18ch}
+.cta p{color:#CBD5E1;margin-bottom:32px}
+footer{background:var(--navy);color:#94A3B8;font-size:14px;padding:28px 0;border-top:1px solid #1C2650}
+footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.fab{position:fixed;right:20px;bottom:20px;z-index:20;box-shadow:0 8px 24px #0A112855}
+@media(max-width:820px){nav ul{display:none}.hero .w{grid-template-columns:1fr}.hero{padding:64px 0 88px}section{padding:72px 0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.chip{opacity:1}.tl::before{transform:scaleY(1)}}
+</style>
+</head>
+<body>
+<nav><div class="w">
+<a class="logo" href="#inicio" aria-label="TargetBiz inicio"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#fff"/><rect x="20" y="12" width="16" height="24" fill="#fff"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg><span>Target<b>Biz</b></span></a>
+<ul><li><a href="#productos">Productos</a></li><li><a href="#servicios">Servicios</a></li><li><a href="#packs">Packs</a></li><li><a href="#proceso">Cómo trabajamos</a></li><li><a href="#faq">Preguntas</a></li></ul>
+<a class="btn" data-wa="Hola, quiero cotizar con TargetBiz">Cotizar</a>
+</div></nav>
+
+<header class="hero" id="inicio"><div class="w">
+<div>
+<h1>Tu negocio, a un toque<i>.</i></h1>
+<p>Tarjetas NFC para reseñas, bots de WhatsApp, páginas web y Google Business. Tecnología simple para que más clientes te encuentren y te elijan.</p>
+<div class="btns"><a class="btn" data-wa="Hola, quiero cotizar con TargetBiz">Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
+</div>
+<div class="card" role="img" aria-label="Tarjeta NFC de TargetBiz enviando una reseña de cinco estrellas">
+<svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#fff"/><rect x="20" y="12" width="16" height="24" fill="#fff"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg>
+<div class="chip">Reseña enviada ★★★★★</div>
+</div>
+</div></header>
+
+<div class="stats"><div class="w">
+<div><b data-n="4">0</b><span>servicios en un solo lugar</span></div>
+<div><b><em style="font-style:normal" data-n="24">0</em>/7</b><span>atención automática con bot</span></div>
+<div><b data-n="1">0</b><span>toque para dejar una reseña</span></div>
+<div><b data-n="3">0</b><span>packs para elegir</span></div>
+</div></div>
+
+<section id="productos"><div class="w">
+<h2>Productos y servicios</h2>
+<p class="lead">Compra solo lo que necesitas o junta todo en un pack. Los precios son referenciales y se confirman al cotizar.</p>
+<h3 class="g">Productos físicos</h3>
+<div class="grid">
+<div class="s"><h4>Tarjeta NFC</h4><p>Tu cliente acerca el celular y abre tu página de reseñas de Google. Sin apps.</p><div class="pr">Desde $XX.XXX</div></div>
+<div class="s"><h4>Llavero NFC</h4><p>Lo mismo que la tarjeta, en formato llavero resistente para el mostrador o el equipo.</p><div class="pr">Desde $XX.XXX</div></div>
+</div>
+<h3 class="g" id="servicios">Servicios digitales</h3>
+<div class="grid">
+<div class="s"><h4>Bot de WhatsApp</h4><p>Responde precios, horarios y preguntas frecuentes las 24 horas.</p><div class="pr">Desde $XX.XXX</div></div>
+<div class="s"><h4>Página web</h4><p>Sitio rápido y profesional con tus servicios, precios y botón de contacto.</p><div class="pr">Desde $XX.XXX</div></div>
+<div class="s"><h4>Google Business Profile</h4><p>Creamos y optimizamos tu perfil para que aparezcas en Maps y en el buscador.</p><div class="pr">Desde $XX.XXX</div></div>
+</div>
+</div></section>
+
+<section class="packs" id="packs"><div class="w">
+<h2>Packs para empezar</h2>
+<p class="lead">Juntar servicios sale más barato que comprarlos por separado. Todos se coordinan por WhatsApp.</p>
+<div class="grid">
+<div class="p"><h4>Básico</h4><div class="price">$XX.XXX</div><small>Pago único</small>
+<ul><li>Tarjeta o llavero NFC</li><li>Link directo a tus reseñas</li><li>Diseño con tu logo</li></ul>
+<a class="btn" data-wa="Hola, quiero cotizar el Pack Básico">Cotizar Básico</a></div>
+<div class="p rec"><span class="tag">Más pedido</span><h4>Pro</h4><div class="price">$XX.XXX</div><small>Pago único</small>
+<ul><li>Todo lo del Básico</li><li>Perfil de Google Business optimizado</li><li>Bot de WhatsApp con respuestas frecuentes</li></ul>
+<a class="btn" data-wa="Hola, quiero cotizar el Pack Pro">Cotizar Pro</a></div>
+<div class="p"><h4>Completo</h4><div class="price">$XX.XXX</div><small>Pago único</small>
+<ul><li>Todo lo del Pro</li><li>Página web para tu negocio</li><li>Soporte durante el primer mes</li></ul>
+<a class="btn" data-wa="Hola, quiero cotizar el Pack Completo">Cotizar Completo</a></div>
+</div>
+</div></section>
+
+<section id="proceso"><div class="w">
+<h2>Cómo trabajamos</h2>
+<p class="lead">Un proceso corto y sin sorpresas.</p>
+<ol class="tl" id="tl">
+<li><span>1</span><h4>Nos escribes</h4><p>Cuéntanos tu negocio y qué necesitas por WhatsApp.</p></li>
+<li><span>2</span><h4>Te cotizamos</h4><p>Recibes el precio final y el plazo de entrega.</p></li>
+<li><span>3</span><h4>Confirmas y pagas</h4><p>Pagas por [medios de pago] y empezamos.</p></li>
+<li><span>4</span><h4>Lo producimos</h4><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p></li>
+<li><span>5</span><h4>Entrega y soporte</h4><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p></li>
+</ol>
+</div></section>
+
+<section id="faq" style="background:var(--bg)"><div class="w">
+<h2>Preguntas frecuentes</h2>
+<div style="margin-top:40px">
+<details><summary>¿Necesito una app para usar la tarjeta NFC?</summary><p>No. Funciona con el NFC del celular, que traen la mayoría de los modelos de los últimos años.</p></details>
+<details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, en ambos. Si el celular no tiene NFC, la tarjeta también incluye un código QR de respaldo.</p></details>
+<details><summary>¿Cuánto demora la entrega?</summary><p>[plazo]. Te confirmamos la fecha exacta al cotizar.</p></details>
+<details><summary>¿Cómo se paga?</summary><p>[medios de pago]. Coordinamos todo por WhatsApp.</p></details>
+<details><summary>¿Sirve para cualquier negocio?</summary><p>Sí: salones, restaurantes, clínicas, talleres, tiendas y cualquier negocio que quiera más reseñas y clientes.</p></details>
+</div></div></section>
+
+<section class="cta" id="contacto"><div class="w">
+<h2>Hablemos de tu negocio</h2>
+<p>Escríbenos y recibe una cotización sin costo.</p>
+<a class="btn" data-wa="Hola, quiero cotizar con TargetBiz">Escribir por WhatsApp</a>
+</div></section>
+
+<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span><a href="#">Instagram</a></span></div></footer>
+
+<a class="btn fab" data-wa="Hola, quiero cotizar con TargetBiz" aria-label="Escribir por WhatsApp">WhatsApp</a>
+
+<script>
+const CFG={wa:'56900000000'};
+document.querySelectorAll('[data-wa]').forEach(a=>{a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
+const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const io=new IntersectionObserver(es=>es.forEach(e=>{
+  if(!e.isIntersecting)return;io.unobserve(e.target);
+  if(e.target.id==='tl')e.target.classList.add('in');
+  else{const n=+e.target.dataset.n;if(still){e.target.textContent=n;return}
+    const t0=performance.now(),d=1400;
+    (function f(t){const p=Math.min((t-t0)/d,1);e.target.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)})(t0);}
+}),{threshold:.4});
+document.querySelectorAll('[data-n],#tl').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
