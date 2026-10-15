@@ -73,17 +73,11 @@ h3.g{font-size:20px;font-weight:800;margin:40px 0 16px}
 .p li::before{content:"✓";position:absolute;left:0;color:var(--cy);font-weight:800}
 .p .btn{text-align:center}
 .p:not(.rec) .btn{background:var(--navy);color:#fff}
-.tl{list-style:none;position:relative;margin-top:8px;max-width:640px}
-.tl::before{content:"";position:absolute;left:19px;top:0;bottom:0;width:2px;background:var(--cy);transform:scaleY(0);transform-origin:top;transition:transform 1.6s ease}
-.tl.in::before{transform:scaleY(1)}
-.tl li{position:relative;padding:0 0 36px 64px}
-.tl li span{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800}
-.tl h4{font-size:19px;font-weight:800}.tl p{color:var(--mut);font-size:15px}
-details{border-bottom:1px solid var(--line);padding:20px 0;max-width:760px}
+details{border:1px solid var(--line);border-radius:14px;background:#fff;padding:18px 22px;margin-bottom:12px;max-width:760px;transition:border-color .2s}details:hover,details[open]{border-color:var(--cy)}
 summary{cursor:pointer;font-weight:800;font-size:18px;list-style:none;display:flex;justify-content:space-between;gap:16px}
 summary::after{content:"+";color:var(--cy);font-size:26px;line-height:1;transition:transform .25s}
 details[open] summary::after{transform:rotate(45deg)}
-details p{color:var(--mut);margin-top:12px}
+details p{color:var(--mut);margin-top:12px;font-size:16px;max-width:62ch}
 .cta{background:var(--navy);color:#fff;text-align:center}
 .cta h2{margin:0 auto 16px;max-width:18ch}
 .cta p{color:#CBD5E1;margin-bottom:32px}
@@ -141,6 +135,108 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 @media(prefers-reduced-motion:reduce){.botbtn svg,.tip,.waving #arm{animation:none}}
 @media(max-width:820px){nav ul{display:none}.hero .w,.two{grid-template-columns:1fr}.hero{padding:64px 0 88px}section{padding:72px 0}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.chip{opacity:1}.tl::before{transform:scaleY(1)}}
+
+/* ===== Hero: tarjeta blanca ===== */
+.card{background:#fff;border-color:#fff;box-shadow:0 24px 60px #0006}
+.card::before,.card::after{border-color:#fff}
+.chip{background:#fff;color:var(--navy);box-shadow:0 10px 30px #0005;display:flex;align-items:center;gap:8px}
+.gs{color:#FBBC04;font-size:17px;letter-spacing:1px;display:inline-flex}
+.gs i{font-style:normal;display:inline-block;animation:sp 7.2s infinite both}
+.gs i:nth-child(2){animation-delay:.1s}.gs i:nth-child(3){animation-delay:.2s}.gs i:nth-child(4){animation-delay:.3s}.gs i:nth-child(5){animation-delay:.4s}
+@keyframes sp{0%,18%{opacity:0;transform:scale(.2)}24%{opacity:1;transform:scale(1.4)}28%,85%{opacity:1;transform:none}95%,100%{opacity:0}}
+.btn.wa{background:#25D366;color:#fff}.btn.wa:hover{background:#1EBE5A}
+/* ===== Escenas de servicios ===== */
+.sc{height:300px;border-radius:12px;background:linear-gradient(180deg,#EEF4FF,#F5F8FF);margin-bottom:20px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;gap:8px}
+.bw{width:108px;flex:none}.bw svg{width:100%;display:block;animation:bob 3s ease-in-out infinite}
+.h1,.h2{animation:ty .3s steps(2) infinite alternate}.h2{animation-delay:.15s}
+@keyframes ty{to{transform:translateY(-7px)}}
+.ek{animation:bk 4s infinite}@keyframes bk{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.15)}}
+.mp{width:152px;flex:none;background:#1B2550;border-radius:24px;padding:6px;box-shadow:0 14px 34px #0A112844}
+.mh{background:#075E54;color:#fff;border-radius:18px 18px 0 0;font-size:10px;font-weight:800;padding:8px 10px;display:flex;gap:6px;align-items:center;line-height:1.2}
+.mh i{width:18px;height:18px;border-radius:50%;background:#25D366;flex:none}.mh small{display:block;font-weight:500;font-size:8px;opacity:.85}
+.cw{background:#E5DDD5;border-radius:0 0 18px 18px;height:218px;padding-top:6px}
+.rw{height:52px;position:relative;margin:0 6px}
+.bb{position:absolute;top:3px;max-width:94%;font-size:9px;line-height:1.3;padding:6px 8px;border-radius:8px;color:var(--navy);box-shadow:0 1px 1px #0002}
+.bb.c{left:0;background:#fff}.bb.b{right:0;background:#DCF8C6}
+.dt{position:absolute;right:0;top:4px;background:#DCF8C6;border-radius:8px;padding:9px 10px;display:flex;gap:3px}
+.dt i{width:5px;height:5px;border-radius:50%;background:#64748B;animation:dj .9s infinite}.dt i:nth-child(2){animation-delay:.15s}.dt i:nth-child(3){animation-delay:.3s}
+@keyframes dj{50%{transform:translateY(-3px)}}
+.m1{animation:a1 12s infinite both}.m2{animation:a2 12s infinite both}.m3{animation:a3 12s infinite both}.m4{animation:a4 12s infinite both}.t1{animation:b1 12s infinite both}.t2{animation:b2 12s infinite both}
+@keyframes a1{0%,3%{opacity:0;transform:translateY(8px)}6%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes a2{0%,24%{opacity:0;transform:translateY(8px)}27%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes a3{0%,37%{opacity:0;transform:translateY(8px)}40%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes a4{0%,60%{opacity:0;transform:translateY(8px)}63%,90%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes b1{0%,9%{opacity:0}11%,23%{opacity:1}25%,100%{opacity:0}}
+@keyframes b2{0%,45%{opacity:0}47%,59%{opacity:1}61%,100%{opacity:0}}
+/* laptop */
+.lp{width:90%;margin-top:-8px}
+.lid{background:#1B2550;border-radius:12px 12px 0 0;padding:7px 7px 9px;box-shadow:0 18px 40px #0A112833}
+.scn{container-type:inline-size;aspect-ratio:16/10;background:#fff;border-radius:4px;overflow:hidden;position:relative}
+.lb{height:10px;width:112%;margin-left:-6%;background:linear-gradient(#E2E8F0,#94A3B8);border-radius:0 0 14px 14px;position:relative}
+.lb::after{content:"";position:absolute;left:42%;right:42%;top:0;height:4px;background:#94A3B8;border-radius:0 0 6px 6px}
+.pg{position:absolute;left:0;right:0;top:0;font-size:2.6cqw;line-height:1.25;animation:pgs 14s ease-in-out infinite}
+@keyframes pgs{0%,18%{transform:translateY(0)}42%,58%{transform:translateY(-57cqw)}82%,100%{transform:translateY(0)}}
+.nv{height:9cqw;padding:0 4cqw;display:flex;align-items:center;gap:3cqw;background:#fff;border-bottom:.3cqw solid #E8EEFA}
+.nv b{width:3.4cqw;height:3.4cqw;border-radius:50%;background:#00C2FF}.nv em{font-style:normal;font-weight:800;font-size:3.4cqw;margin-right:auto}
+.nv u{width:7cqw;height:1cqw;border-radius:1cqw;background:#CBD5E1}.nb{background:#0A1128;color:#fff;font-weight:800;font-size:2.4cqw;padding:1.2cqw 2.6cqw;border-radius:5cqw}
+.hr{height:46cqw;position:relative;overflow:hidden;background:linear-gradient(135deg,#0A1128,#1B2E7A 65%,#0A6BA8);color:#fff}
+.hr::after{content:"";position:absolute;right:-12cqw;bottom:-16cqw;width:46cqw;height:46cqw;border-radius:50%;background:radial-gradient(#00C2FF66,#0000 70%);animation:gl 5s ease-in-out infinite}
+@keyframes gl{50%{transform:scale(1.2)}}
+.hr h5{position:absolute;left:4cqw;top:6cqw;font-size:6.6cqw;line-height:1.08;font-weight:800;letter-spacing:-.03em}.hr h5 i{font-style:normal;color:#00C2FF}
+.sp{position:absolute;left:4cqw;top:25cqw;width:38cqw;font-size:2.6cqw;color:#CBD5E1;line-height:1.35}
+.wb{position:absolute;left:4cqw;top:33cqw;width:24cqw;height:7cqw;border-radius:7cqw;background:#25D366;display:grid;place-items:center;font-weight:800;font-size:2.8cqw;animation:bp 14s infinite}
+@keyframes bp{0%,12%{transform:scale(1);box-shadow:0 0 0 0 #25D36699}14%{transform:scale(.92)}16%{transform:scale(1);box-shadow:0 0 0 0 #25D366aa}24%,100%{transform:scale(1);box-shadow:0 0 0 3cqw #25D36600}}
+.fc{position:absolute;right:5cqw;top:9cqw;width:36cqw;background:#fff;color:var(--navy);border-radius:3cqw;padding:3cqw;box-shadow:0 2cqw 5cqw #0006}
+.fs{color:#FBBC04;font-size:4cqw;letter-spacing:.3cqw}.fc small{color:#64748B;font-size:2.3cqw}.fc b{font-size:3.4cqw}
+.fl{height:1.3cqw;border-radius:1cqw;background:#E2E8F0;margin-top:2cqw}.fl.s2{width:60%}
+.wi1,.wi2,.wb,.fc{animation-fill-mode:both}.wi1{animation:wi 14s infinite both .1s}.wi2{animation:wi 14s infinite both .4s}.wi3{animation:wi 14s infinite both .7s}
+.wb.wi3{animation:wi 14s infinite both .7s,bp 14s infinite}
+.fc.wi2{animation:wi 14s infinite both .5s,fy 4s ease-in-out infinite}
+@keyframes wi{0%{opacity:0;transform:translateY(3cqw)}3%,93%{opacity:1;transform:none}98%,100%{opacity:0}}
+@keyframes fy{50%{translate:0 -1.4cqw}}
+.ft{height:32cqw;padding:5cqw 4cqw;display:flex;gap:3cqw;background:#F5F8FF}
+.c1{flex:1;background:#fff;border-radius:2.5cqw;padding:3cqw;box-shadow:0 .8cqw 2.5cqw #0A11280F;font-size:2.3cqw;color:#475569;animation:ci 14s infinite both}.c1.d2{animation-delay:.15s}.c1.d3{animation-delay:.3s}
+.c1 i{display:block;width:6cqw;height:6cqw;border-radius:1.6cqw;margin-bottom:2cqw;background:#00C2FF}.c1.d2 i{background:#25D366}.c1.d3 i{background:#FBBC04}.c1 b{display:block;font-size:3cqw;color:var(--navy);font-weight:800}
+@keyframes ci{0%,20%{opacity:0;transform:translateY(5cqw)}27%,93%{opacity:1;transform:none}98%,100%{opacity:0}}
+.sx{height:14cqw;display:flex;justify-content:space-around;align-items:center;text-align:center;font-size:2.3cqw;color:#64748B}.sx b{display:block;font-size:4.6cqw;color:var(--navy);font-weight:800}
+.cb{height:18cqw;background:#0A1128;color:#fff;display:grid;place-items:center;font-weight:800;font-size:4cqw}
+.cu{position:absolute;width:4.5cqw;height:4.5cqw;left:0;top:0;z-index:3;animation:cur 14s ease-in-out infinite;filter:drop-shadow(0 .3cqw .3cqw #0006)}
+@keyframes cur{0%{transform:translate(78cqw,52cqw)}9%,13%{transform:translate(15cqw,44cqw)}22%{transform:translate(62cqw,34cqw)}45%{transform:translate(48cqw,40cqw)}85%,100%{transform:translate(78cqw,52cqw)}}
+/* google business */
+.gp{flex-direction:column;justify-content:flex-start;padding-top:8px;gap:8px}
+.tg{display:flex;background:#fff;border-radius:99px;padding:3px;font-size:11px;font-weight:800;box-shadow:0 2px 8px #0A112814}
+.tg span{padding:4px 14px;border-radius:99px;color:#475569}
+.tg .pa{animation:pa 10s infinite}.tg .pd{background:#0A1128;color:#fff;animation:pd 10s infinite}
+@keyframes pa{0%,46%{background:#94A3B8;color:#fff}52%,94%{background:none;color:#475569}98%,100%{background:#94A3B8;color:#fff}}
+@keyframes pd{0%,46%{background:none;color:#475569}52%,94%{background:#0A1128;color:#fff}98%,100%{background:none;color:#475569}}
+.gm{width:160px;height:244px;background:#1B2550;border-radius:24px;padding:6px;flex:none;box-shadow:0 14px 34px #0A112844}
+.gx{position:relative;height:100%;background:#fff;border-radius:18px;overflow:hidden;font-size:10px;line-height:1.3;color:var(--navy)}
+.bf,.af{position:absolute;inset:0}.bf{animation:bfo 10s infinite}.af{animation:afi 10s infinite both}
+@keyframes bfo{0%,46%{opacity:1}52%,94%{opacity:0}98%,100%{opacity:1}}
+@keyframes afi{0%,46%{opacity:0}52%,94%{opacity:1}98%,100%{opacity:0}}
+.ph{height:62px;background:#E2E8F0;color:#94A3B8;display:grid;place-items:center;font-size:9px;font-weight:800}
+.ph2{background:linear-gradient(135deg,#F59E0B,#EF4444 55%,#8B5CF6);align-items:end;justify-items:start}.ph2 span{background:#0008;color:#fff;margin:5px;padding:2px 7px;border-radius:99px}
+.gi{padding:9px 10px}.gi>b{font-size:12px;font-weight:800;display:block}.vf{font-style:normal;background:#1A73E8;color:#fff;border-radius:50%;font-size:8px;padding:1px 3px}
+.rt{margin:3px 0;display:flex;align-items:center;gap:4px}.gr{color:#64748B}.gy{color:#CBD5E1;letter-spacing:1px}.ln{color:#475569;font-size:9px}.gn{color:#188038;font-weight:800}
+.ys{color:#FBBC04;display:inline-flex;font-size:11px}.ys i{font-style:normal;display:inline-block;animation:sp2 10s infinite both}.ys i:nth-child(2){animation-delay:.12s}.ys i:nth-child(3){animation-delay:.24s}.ys i:nth-child(4){animation-delay:.36s}.ys i:nth-child(5){animation-delay:.48s}
+@keyframes sp2{0%,50%{opacity:0;transform:scale(0)}55%{opacity:1;transform:scale(1.5)}59%,94%{opacity:1;transform:none}98%,100%{opacity:0}}
+.ac{display:flex;gap:5px;margin:8px 0}.ac i{flex:1;font-style:normal;text-align:center;font-size:8.5px;font-weight:800;padding:5px 0;border-radius:99px;background:#F1F5F9;color:#94A3B8}.ac.on i{background:#E8F0FE;color:#1A73E8}
+.wn{font-size:9px;color:#94A3B8;padding:3px 0;border-top:1px dashed #E2E8F0}.own{margin-top:8px;font-size:9px;color:#1A73E8;font-weight:800}
+.br{margin:6px 0}.br u{display:block;height:4px;border-radius:4px;background:#E2E8F0;margin:3px 0;position:relative;overflow:hidden}.br u::after{content:"";position:absolute;left:0;top:0;bottom:0;background:#FBBC04;width:var(--w);animation:gw 10s infinite both}
+@keyframes gw{0%,54%{width:0}64%,94%{width:var(--w)}98%,100%{width:0}}
+.rvw{display:flex;gap:6px;background:#F8FAFC;border-radius:8px;padding:7px;font-size:9px;margin-top:6px}.av{width:18px;height:18px;border-radius:50%;background:#0A1128;color:#fff;display:grid;place-items:center;font-weight:800;flex:none}.ys.sm{font-size:8px;display:flex}
+/* ===== Cómo trabajamos ===== */
+.tl{list-style:none;padding:0;position:relative;margin-top:8px;display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.tl::before{content:"";position:absolute;left:20px;right:20px;top:19px;height:2px;background:linear-gradient(90deg,var(--cy),#7FE0FF);transform:scaleX(0);transform-origin:left;transition:transform 1.6s ease}
+.tl.in::before{transform:scaleX(1)}
+.tl li{position:relative;padding-top:56px;opacity:0;transform:translateY(14px);transition:opacity .5s,transform .5s}
+.tl.in li{opacity:1;transform:none}.tl.in li:nth-child(2){transition-delay:.2s}.tl.in li:nth-child(3){transition-delay:.4s}.tl.in li:nth-child(4){transition-delay:.6s}.tl.in li:nth-child(5){transition-delay:.8s}
+.tl li span{position:absolute;left:0;top:0;width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:800;box-shadow:0 0 0 6px #fff}
+.tl li:nth-child(5) span{background:var(--cy);color:var(--navy)}
+.tl em{display:inline-block;font-style:normal;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0077A8}
+.tl h4{font-size:18px;font-weight:800;margin:4px 0}.tl p{color:var(--mut);font-size:15px}
+@media(max-width:900px){.tl{grid-template-columns:1fr;gap:0}.tl::before{left:19px;right:auto;top:0;bottom:0;width:2px;height:auto;transform:scaleY(0);transform-origin:top}.tl.in::before{transform:scaleY(1)}.tl li{padding:0 0 32px 64px}}
+@media(prefers-reduced-motion:reduce){.bf,.dt,.cu{display:none}.pg{transform:none}}
 </style>
 </head>
 <body>
@@ -155,11 +251,11 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <div>
 <h1>Tu negocio, a un toque<i>.</i></h1>
 <p>Tarjetas NFC para reseñas, bots de WhatsApp, páginas web y Google Business. Tecnología simple para que más clientes te encuentren y te elijan.</p>
-<div class="btns"><a class="btn" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
+<div class="btns"><a class="btn wa" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
 </div>
 <div class="card" role="img" aria-label="Tarjeta NFC de TargetBiz enviando una reseña de cinco estrellas">
-<svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#fff"/><rect x="20" y="12" width="16" height="24" fill="#fff"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg>
-<div class="chip">Reseña enviada ★★★★★</div>
+<svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#0A1128"/><rect x="20" y="12" width="16" height="24" fill="#0A1128"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg>
+<div class="chip">Reseña enviada <span class="gs" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span></div>
 </div>
 </div></header>
 
@@ -207,10 +303,11 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 <p class="rf">Imágenes y modelos 3D referenciales. El diseño final del producto puede variar.</p>
 <h3 class="g" id="servicios">Servicios digitales</h3>
 <div class="grid">
-<div class="s"><h4>Bot de WhatsApp</h4><p>Responde precios, horarios y preguntas frecuentes las 24 horas.</p><div class="pr">$30.000 + $10.000 al mes</div></div>
-<div class="s"><h4>Página web</h4><p>Sitio rápido y profesional con tus servicios, precios y botón de contacto.</p><div class="pr">Cotiza por WhatsApp</div></div>
-<div class="s"><h4>Google Business Profile</h4><p>Creamos y optimizamos tu perfil para que aparezcas en Maps y en el buscador.</p><div class="pr">Incluido en el Pack Pro ($25.000)</div></div>
+<div class="s"><div class="sc" role="img" aria-label="Ilustración animada: un bot trabaja en su laptop y responde por WhatsApp a un cliente"><div class="bw"><svg viewBox="0 0 160 170" aria-hidden="true" shape-rendering="crispEdges"><rect x="70" y="0" width="20" height="20" fill="#00C2FF" class="tip"/><rect x="70" y="20" width="20" height="20" fill="#1B2550"/><rect x="30" y="40" width="100" height="10" fill="#1B2550"/><rect x="20" y="50" width="120" height="50" fill="#1B2550"/><rect x="30" y="100" width="100" height="10" fill="#1B2550"/><rect x="0" y="60" width="20" height="30" fill="#00C2FF"/><rect x="140" y="60" width="20" height="30" fill="#00C2FF"/><rect x="30" y="50" width="100" height="50" fill="#0A1128"/><rect x="50" y="60" width="20" height="20" fill="#00C2FF" class="eye ek"/><rect x="90" y="60" width="20" height="20" fill="#00C2FF" class="eye ek"/><rect x="60" y="90" width="40" height="10" fill="#00C2FF"/><rect x="40" y="110" width="80" height="40" fill="#1B2550"/><rect x="24" y="112" width="112" height="46" fill="#CBD5E1"/><rect x="74" y="128" width="12" height="12" fill="#00C2FF"/><rect x="12" y="158" width="136" height="8" fill="#94A3B8"/><g class="h1"><rect x="6" y="106" width="16" height="30" fill="#1B2550"/><rect x="6" y="136" width="16" height="10" fill="#00C2FF"/></g><g class="h2"><rect x="138" y="106" width="16" height="30" fill="#1B2550"/><rect x="138" y="136" width="16" height="10" fill="#00C2FF"/></g></svg></div><div class="mp"><div class="mh"><i></i><div>Tu negocio<small>bot · en línea</small></div></div><div class="cw"><div class="rw"><div class="bb c m1">Hola, ¿cuánto cuesta un corte?</div></div><div class="rw"><div class="dt t1"><i></i><i></i><i></i></div><div class="bb b m2">¡Hola! Sale $12.000 ¿Agendamos?</div></div><div class="rw"><div class="bb c m3">Sí, mañana a las 11:00</div></div><div class="rw"><div class="dt t2"><i></i><i></i><i></i></div><div class="bb b m4">Listo, quedaste agendado ✓✓</div></div></div></div></div><h4>Bot de WhatsApp</h4><p>Responde precios, horarios y preguntas frecuentes las 24 horas.</p><div class="pr">$30.000 + $10.000 al mes</div></div>
+<div class="s"><div class="sc" role="img" aria-label="Ilustración animada: una laptop mostrando una página web profesional con animaciones"><div class="lp"><div class="lid"><div class="scn"><div class="pg"><div class="nv"><b></b><em>Aurora</em><u></u><u></u><u></u><span class="nb">Reservar</span></div><div class="hr"><h5 class="wi1">Tu negocio,<br><i>a un toque.</i></h5><div class="sp wi2">Reseñas, reservas y atención automática en un solo lugar.</div><div class="wb wi3">Cotizar</div><div class="fc wi2"><div class="fs">★★★★★</div><b>4,9</b> <small>128 reseñas</small><div class="fl"></div><div class="fl s2"></div></div></div><div class="ft"><div class="c1"><i></i><b>Reseñas</b>Más estrellas en Google</div><div class="c1 d2"><i></i><b>Bot 24/7</b>Responde por ti</div><div class="c1 d3"><i></i><b>Web</b>Rápida y clara</div></div><div class="sx"><div><b>4,9★</b>Google</div><div><b>24/7</b>Atención</div><div><b>+128</b>Reseñas</div></div><div class="cb">Agenda tu hora hoy</div></div><svg class="cu" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#0A1128" stroke-width="1.6" stroke-linejoin="round"/></svg></div></div><div class="lb"></div></div></div><h4>Página web</h4><p>Sitio rápido y profesional con tus servicios, precios y botón de contacto.</p><div class="pr">Cotiza por WhatsApp</div></div>
+<div class="s"><div class="sc gp" role="img" aria-label="Ilustración animada: un perfil de Google sin reseñas y luego con muchas reseñas de cinco estrellas"><div class="tg"><span class="pa">Antes</span><span class="pd">Después</span></div><div class="gm"><div class="gx"><div class="bf"><div class="ph">Sin fotos</div><div class="gi"><b>Salón Aurora</b><div class="rt"><span class="gr">Sin reseñas</span> <span class="gy">☆☆☆☆☆</span></div><div class="ln">Peluquería</div><div class="ac"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="wn">Horario no disponible</div><div class="wn">Sin descripción</div><div class="own">¿Eres el dueño? Reclama este perfil</div></div></div><div class="af"><div class="ph ph2"><span>24 fotos</span></div><div class="gi"><b>Salón Aurora <em class="vf">✓</em></b><div class="rt"><strong>4,9</strong> <span class="ys"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> <span class="gr">(128)</span></div><div class="ln">Peluquería · <span class="gn">Abierto</span> · Cierra 20:00</div><div class="ac on"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="br"><u style="--w:92%"></u><u style="--w:6%"></u><u style="--w:2%"></u></div><div class="rvw"><span class="av">M</span><div><span class="ys sm"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span>Excelente atención</div></div></div></div></div></div></div><h4>Google Business Profile</h4><p>Creamos y optimizamos tu perfil para que aparezcas en Maps y en el buscador.</p><div class="pr">Incluido en el Pack Pro ($25.000)</div></div>
 </div>
+<p class="rf">Animaciones e ilustraciones de ejemplo, solo referenciales.</p>
 </div></section>
 
 <section class="packs" id="packs"><div class="w">
@@ -231,24 +328,25 @@ footer .w{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
 
 <section id="proceso"><div class="w">
 <h2>Cómo trabajamos</h2>
-<p class="lead">Un proceso corto y sin sorpresas.</p>
+<p class="lead">Cinco pasos claros, desde tu primer mensaje hasta tu negocio funcionando.</p>
 <ol class="tl" id="tl">
-<li><span>1</span><h4>Nos escribes</h4><p>Cuéntanos tu negocio y qué necesitas por WhatsApp.</p></li>
-<li><span>2</span><h4>Te cotizamos</h4><p>Recibes el precio final y el plazo de entrega.</p></li>
-<li><span>3</span><h4>Confirmas y pagas</h4><p>Pagas por [medios de pago] y empezamos.</p></li>
-<li><span>4</span><h4>Lo producimos</h4><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p></li>
-<li><span>5</span><h4>Entrega y soporte</h4><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p></li>
+<li><span>1</span><em>Tú</em><h4>Nos escribes</h4><p>Cuéntanos de tu negocio y qué necesitas. Te respondemos por WhatsApp.</p></li>
+<li><span>2</span><em>Nosotros</em><h4>Te cotizamos</h4><p>Recibes el precio final y el plazo de entrega, sin letra chica.</p></li>
+<li><span>3</span><em>Tú</em><h4>Confirmas y pagas</h4><p>Pagas por [medios de pago] y damos inicio a tu pedido.</p></li>
+<li><span>4</span><em>Nosotros</em><h4>Lo producimos</h4><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p></li>
+<li><span>5</span><em>Nosotros</em><h4>Entrega y soporte</h4><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p></li>
 </ol>
+<p style="margin-top:20px"><a class="btn wa" data-wa="Hola, quiero empezar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Empezar por WhatsApp</a></p>
 </div></section>
 
 <section id="faq" style="background:var(--bg)"><div class="w">
 <h2>Preguntas frecuentes</h2>
 <div style="margin-top:40px">
-<details><summary>¿Necesito una app para usar la tarjeta NFC?</summary><p>No. Funciona con el NFC del celular, que traen la mayoría de los modelos de los últimos años.</p></details>
-<details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, en ambos. Si el celular no tiene NFC, la tarjeta también incluye un código QR de respaldo.</p></details>
-<details><summary>¿Cuánto demora la entrega?</summary><p>[plazo]. Te confirmamos la fecha exacta al cotizar.</p></details>
-<details><summary>¿Cómo se paga?</summary><p>[medios de pago]. Coordinamos todo por WhatsApp.</p></details>
-<details><summary>¿Sirve para cualquier negocio?</summary><p>Sí: salones, restaurantes, clínicas, talleres, tiendas y cualquier negocio que quiera más reseñas y clientes.</p></details>
+<details><summary>¿Necesito una app para usar la tarjeta NFC?</summary><p>No. Tu cliente solo acerca el celular a la placa o al llavero y se abre tu página de reseñas de Google. Funciona con el NFC que traen la mayoría de los celulares de los últimos años.</p></details>
+<details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, con ambos. Si el celular no tiene NFC, tu cliente puede escanear el código QR de respaldo.</p></details>
+<details><summary>¿Cuánto demora la entrega?</summary><p>[plazo]. Te confirmamos la fecha exacta al cotizar, antes de pagar.</p></details>
+<details><summary>¿Cómo se paga?</summary><p>[medios de pago]. Coordinamos todo por WhatsApp y confirmas el valor final antes de pagar.</p></details>
+<details><summary>¿Sirve para cualquier negocio?</summary><p>Sí. Está pensado para negocios locales, como salones, restaurantes, clínicas, talleres y tiendas, que quieren más reseñas y más clientes.</p></details>
 </div></div></section>
 
 <section id="clientes" hidden><div class="w">
