@@ -19,16 +19,30 @@
     x.fillStyle = GB[0]; x.fillRect(cx, cy - w / 2, R + w / 2, w);
   }
 
+  function fakeQR(x, cx, cy, size) {
+    var n = 25, m = size / n, x0 = cx - size / 2, y0 = cy - size / 2, seed = 7;
+    function rnd() { seed = (seed * 16807) % 2147483647; return seed / 2147483647; }
+    function inF(i, j) { return (i < 8 && j < 8) || (i < 8 && j > n - 9) || (i > n - 9 && j < 8); }
+    x.fillStyle = NAVY;
+    for (var i = 0; i < n; i++) for (var j = 0; j < n; j++) { if (inF(i, j)) continue; if (rnd() > 0.5) x.fillRect(x0 + j * m, y0 + i * m, m + 0.5, m + 0.5); }
+    [[0, 0], [0, n - 7], [n - 7, 0]].forEach(function (p) {
+      var ox = x0 + p[1] * m, oy = y0 + p[0] * m;
+      x.fillStyle = NAVY; x.fillRect(ox, oy, 7 * m, 7 * m); x.fillStyle = '#fff'; x.fillRect(ox + m, oy + m, 5 * m, 5 * m);
+      x.fillStyle = NAVY; x.fillRect(ox + 2 * m, oy + 2 * m, 3 * m, 3 * m);
+    });
+  }
+
   function facePlaca() {
-    var c = canvas(1024, 1463), x = c.getContext('2d');
-    x.fillStyle = '#fff'; x.fillRect(0, 0, 1024, 1463);
+    var c = canvas(1024, 1720), x = c.getContext('2d');
+    x.fillStyle = '#fff'; x.fillRect(0, 0, 1024, 1720);
     x.fillStyle = NAVY; x.textAlign = 'center';
-    x.font = '800 92px ' + FONT; x.fillText('Tu opinión', 512, 220); x.fillText('nos importa', 512, 325);
-    gLogo(x, 512, 660, 170, 60);
-    stars(x, 512, 1010, 66, 142);
-    x.fillStyle = '#475569'; x.font = '500 52px ' + FONT;
-    x.fillText('Acerca tu celular', 512, 1185); x.fillText('y deja tu reseña', 512, 1252);
-    GB.forEach(function (k, i) { x.fillStyle = k; x.fillRect(212 + i * 150, 1350, 150, 14); });
+    x.font = '800 88px ' + FONT; x.fillText('Tu opinión', 512, 190); x.fillText('nos importa', 512, 292);
+    gLogo(x, 512, 560, 150, 52);
+    stars(x, 512, 835, 60, 130);
+    fakeQR(x, 512, 1130, 350);
+    x.fillStyle = '#475569'; x.font = '500 50px ' + FONT;
+    x.fillText('Acerca tu celular', 512, 1465); x.fillText('o escanea el código', 512, 1530);
+    GB.forEach(function (k, i) { x.fillStyle = k; x.fillRect(212 + i * 150, 1630, 150, 14); });
     return c;
   }
 
@@ -46,7 +60,7 @@
   }
 
   function buildPlaca(T, tex) {
-    var g = new T.Group(), sh = new T.Shape(), w = 3, h = 4.2, r = 0.28;
+    var g = new T.Group(), sh = new T.Shape(), w = 3, h = 4.9, r = 0.28, th = -0.17;
     sh.moveTo(-w / 2 + r, -h / 2); sh.lineTo(w / 2 - r, -h / 2); sh.quadraticCurveTo(w / 2, -h / 2, w / 2, -h / 2 + r);
     sh.lineTo(w / 2, h / 2 - r); sh.quadraticCurveTo(w / 2, h / 2, w / 2 - r, h / 2);
     sh.lineTo(-w / 2 + r, h / 2); sh.quadraticCurveTo(-w / 2, h / 2, -w / 2, h / 2 - r);
@@ -54,24 +68,26 @@
     var geo = new T.ExtrudeGeometry(sh, { depth: 0.12, bevelEnabled: true, bevelThickness: 0.03, bevelSize: 0.03, bevelSegments: 3, curveSegments: 12 });
     geo.translate(0, 0, -0.06);
     var acr = new T.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.15, clearcoat: 1, clearcoatRoughness: 0.1 });
-    var panel = new T.Mesh(geo, acr); panel.position.set(0, 2.25, -0.7); panel.rotation.x = -0.14;
-    var face = new T.Mesh(new T.PlaneGeometry(2.8, 4), new T.MeshBasicMaterial({ map: tex })); face.position.z = 0.095; panel.add(face);
-    var base = new T.Mesh(new T.BoxGeometry(3, 0.14, 2), acr); base.position.set(0, 0.07, 0.1);
-    g.add(panel, base); g.position.y = -2.0;
+    var panel = new T.Mesh(geo, acr);
+    panel.position.set(0, 0.12 + (h / 2) * Math.cos(th), 0.55 - (h / 2) * Math.abs(Math.sin(th))); panel.rotation.x = th;
+    var face = new T.Mesh(new T.PlaneGeometry(2.8, 4.7), new T.MeshBasicMaterial({ map: tex })); face.position.z = 0.095; panel.add(face);
+    var base = new T.Mesh(new T.BoxGeometry(3, 0.12, 2.2), acr); base.position.set(0, 0.06, -0.45);
+    g.add(panel, base); g.position.y = -2.55;
     return { group: g, animate: function (t) { g.rotation.y = Math.sin(t * 0.6) * 0.55; } };
   }
 
   function buildLlavero(T, tex) {
-    var g = new T.Group(), piv = new T.Group(); piv.position.y = 2.25; g.add(piv);
+    var g = new T.Group(), piv = new T.Group(); piv.position.y = 2.4; g.add(piv);
     var metal = new T.MeshStandardMaterial({ color: 0xc4cbd6, metalness: 0.6, roughness: 0.3 });
     var acr = new T.MeshPhysicalMaterial({ color: 0xffffff, roughness: 0.2, clearcoat: 1, clearcoatRoughness: 0.1 });
-    var ring = new T.Mesh(new T.TorusGeometry(0.4, 0.045, 12, 48), metal); ring.position.y = -0.4; piv.add(ring);
-    for (var i = 0; i < 2; i++) { var l = new T.Mesh(new T.TorusGeometry(0.13, 0.035, 10, 24), metal); l.position.y = -0.85 - i * 0.25; l.rotation.y = i % 2 ? Math.PI / 2 : 0; piv.add(l); }
-    var eye = new T.Mesh(new T.TorusGeometry(0.2, 0.055, 12, 32), metal); eye.position.y = -1.45; piv.add(eye);
-    var disc = new T.Mesh(new T.CylinderGeometry(1.5, 1.5, 0.16, 64), acr); disc.rotation.x = Math.PI / 2; disc.position.y = -3.0; piv.add(disc);
-    var dec = new T.CircleGeometry(1.48, 64), m = new T.MeshBasicMaterial({ map: tex });
-    var f1 = new T.Mesh(dec, m); f1.position.set(0, -3.0, 0.085); piv.add(f1);
-    var f2 = new T.Mesh(dec, m); f2.position.set(0, -3.0, -0.085); f2.rotation.y = Math.PI; piv.add(f2);
+    var ring = new T.Mesh(new T.TorusGeometry(0.66, 0.05, 12, 56), metal); ring.position.y = -0.66; piv.add(ring);
+    for (var i = 0; i < 3; i++) { var l = new T.Mesh(new T.TorusGeometry(0.13, 0.035, 10, 24), metal); l.position.y = -1.55 - i * 0.25; l.rotation.y = i % 2 ? Math.PI / 2 : 0; piv.add(l); }
+    var eye = new T.Mesh(new T.TorusGeometry(0.2, 0.055, 12, 32), metal); eye.position.y = -2.4; piv.add(eye);
+    var R = 1.15, cy = -3.63;
+    var disc = new T.Mesh(new T.CylinderGeometry(R, R, 0.16, 64), acr); disc.rotation.x = Math.PI / 2; disc.position.y = cy; piv.add(disc);
+    var dec = new T.CircleGeometry(R - 0.02, 64), m = new T.MeshBasicMaterial({ map: tex });
+    var f1 = new T.Mesh(dec, m); f1.position.set(0, cy, 0.085); piv.add(f1);
+    var f2 = new T.Mesh(dec, m); f2.position.set(0, cy, -0.085); f2.rotation.y = Math.PI; piv.add(f2);
     return { group: g, animate: function (t) { piv.rotation.z = Math.sin(t * 1.1) * 0.12; g.rotation.y = t * 0.5; } };
   }
 
@@ -89,7 +105,7 @@
       var d2 = new T.DirectionalLight(0x00c2ff, 0.35); d2.position.set(-5, 2, -3); sc.add(d2);
       var model = kind === 'placa' ? buildPlaca(T, tex) : buildLlavero(T, tex);
       sc.add(model.group);
-      if (kind === 'placa') { cam.position.set(0, 1.2, 10.5); cam.lookAt(0, 0, 0); } else { cam.position.set(0, 0, 10); cam.lookAt(0, 0, 0); }
+      if (kind === 'placa') { cam.position.set(0, 1.0, 12.5); cam.lookAt(0, 0, 0); } else { cam.position.set(0, 0, 11.5); cam.lookAt(0, 0, 0); }
       var still = root.matchMedia('(prefers-reduced-motion:reduce)').matches, off = 0, drag = false, lx = 0, vis = true, t0 = performance.now();
       function draw(t) { model.animate(t); model.group.rotation.y += off; r.render(sc, cam); }
       function loop(now) { if (vis) draw((now - t0) / 1000); root.requestAnimationFrame(loop); }
