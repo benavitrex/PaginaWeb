@@ -28,7 +28,7 @@
 <meta name="twitter:description" content="Tarjetas NFC para reseñas, bots de WhatsApp, páginas web y Google Business Profile para negocios locales.">
 <meta name="twitter:image" content="https://benavitrex.github.io/PaginaWeb/og-image-1200x630.png">
 <meta name="twitter:image:alt" content="TargetBiz: Tu negocio, a un toque.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"TargetBiz","url":"https://benavitrex.github.io/PaginaWeb/","image":"https://benavitrex.github.io/PaginaWeb/og-image-1200x630.png","logo":"https://benavitrex.github.io/PaginaWeb/apple-touch-icon-180.png","telephone":"+56938766298","description":"Tarjetas NFC para reseñas de Google, bots de WhatsApp, páginas web y optimización de Google Business Profile para negocios locales.","areaServed":{"@type":"Country","name":"Chile"},"sameAs":["https://share.google/KR9WFSIEWCQy2OxDG"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"TargetBiz","url":"https://benavitrex.github.io/PaginaWeb/","image":"https://benavitrex.github.io/PaginaWeb/og-image-1200x630.png","logo":"https://benavitrex.github.io/PaginaWeb/apple-touch-icon-180.png","telephone":"+56938766298","description":"Tarjetas NFC para reseñas de Google, bots de WhatsApp, páginas web y optimización de Google Business Profile para negocios locales.","areaServed":{"@type":"Country","name":"Chile"},"sameAs":["https://share.google/KR9WFSIEWCQy2OxDG"],"priceRange":"$8.000 - $30.000 CLP","contactPoint":{"@type":"ContactPoint","telephone":"+56938766298","contactType":"customer service","availableLanguage":"Spanish"},"hasOfferCatalog":{"@type":"OfferCatalog","name":"Productos y servicios de TargetBiz","itemListElement":[{"@type":"Offer","priceCurrency":"CLP","price":"8000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Llavero NFC para Google Reviews"}},{"@type":"Offer","priceCurrency":"CLP","price":"20000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"3 llaveros NFC para Google Reviews"}},{"@type":"Offer","priceCurrency":"CLP","price":"20000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Placa NFC para Google Reviews"}},{"@type":"Offer","priceCurrency":"CLP","price":"25000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Pack Básico: placa NFC + llavero NFC"}},{"@type":"Offer","priceCurrency":"CLP","price":"30000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Product","name":"Pack Pro: placa NFC + llavero NFC + creación de Google Business Profile"}},{"@type":"Offer","priceCurrency":"CLP","price":"30000","availability":"https://schema.org/InStock","itemOffered":{"@type":"Service","name":"Bot de WhatsApp (creación)"}},{"@type":"Offer","priceCurrency":"CLP","itemOffered":{"@type":"Service","name":"Atención y mantención mensual del bot de WhatsApp"},"priceSpecification":{"@type":"UnitPriceSpecification","price":"10000","priceCurrency":"CLP","billingDuration":"P1M","unitCode":"MON"}}]}}</script>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
@@ -442,6 +442,25 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 @media(max-width:1000px){.ex{grid-template-columns:1fr;max-width:520px;margin-left:auto;margin-right:auto}}
 @media(max-width:600px){.xc{padding:16px}.xs{height:300px}}
 @media(prefers-reduced-motion:reduce){.xa-n .rg,.xb-m .d i{animation:none!important}}
+
+/* ===== Ajustes: protagonismo Pro, enlaces a términos, pantallas pequeñas ===== */
+.p.rec .price{font-size:52px;color:var(--cy)}
+.p.rec .tag{box-shadow:0 6px 18px #00C2FF55}
+@media(min-width:900px){.p.rec{transform:scale(1.05);z-index:1;box-shadow:0 36px 80px -24px #00C2FF99}.p:not(.rec){box-shadow:none}}
+@media(min-width:900px) and (hover:hover){.p.rec:hover{transform:scale(1.05) translateY(-6px)}}
+.tosl{display:block;margin-top:14px;text-align:center;font-size:14px;font-weight:800;color:#0077A8;text-decoration:underline;text-underline-offset:3px}
+details p .tosl{display:inline;margin:0;text-align:left;font-size:inherit}
+.tosl:hover{color:var(--navy)}
+html,body{overflow-x:clip}
+img,svg,canvas,video{max-width:100%}
+@media(max-width:374px){
+ .w{padding:0 16px}
+ .grid,.packs .grid{grid-template-columns:1fr}
+ .p{padding:24px 18px}.p.rec .price{font-size:44px}
+ .v3{height:300px}.s{padding:18px 14px}
+ .hero p{font-size:17px}
+ .card{animation:none}
+}
 </style>
 </head>
 <body>
@@ -544,15 +563,15 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 <p class="lead">Compra solo lo que necesitas o junta todo en un pack. Los precios son referenciales y se confirman al cotizar.</p>
 <h3 class="g">Productos físicos</h3>
 <div class="grid">
-<div class="s"><div class="v3" data-m="placa" role="img" aria-label="Modelo 3D giratorio de la placa NFC para Google Reviews"></div><h4>Placa NFC para Google Reviews</h4><p>Tu cliente acerca el celular y abre tu página de reseñas de Google. Sin apps.</p><div class="pr">Incluida en el Pack Básico ($20.000)</div></div>
-<div class="s"><div class="v3" data-m="llavero" role="img" aria-label="Modelo 3D giratorio del llavero NFC para Google Reviews"></div><h4>Llavero NFC para Google Reviews</h4><p>Lo mismo que la tarjeta, en formato llavero resistente para el mostrador o el equipo.</p><div class="pr">Incluido en el Pack Básico ($20.000)</div></div>
+<div class="s"><div class="v3" data-m="placa" role="img" aria-label="Modelo 3D giratorio de la placa NFC para Google Reviews"></div><h4>Placa NFC para Google Reviews</h4><p>Tu cliente acerca el celular y abre tu página de reseñas de Google. Sin apps.</p><div class="pr">$20.000 · Con llavero: $25.000</div></div>
+<div class="s"><div class="v3" data-m="llavero" role="img" aria-label="Modelo 3D giratorio del llavero NFC para Google Reviews"></div><h4>Llavero NFC para Google Reviews</h4><p>Lo mismo que la tarjeta, en formato llavero resistente para el mostrador o el equipo.</p><div class="pr">$8.000 · 3 llaveros: $20.000</div></div>
 </div>
 <p class="rf">Imágenes y modelos 3D referenciales. El diseño final del producto puede variar.</p>
 <h3 class="g" id="servicios">Servicios digitales</h3>
 <div class="grid">
 <div class="s"><div class="sc" role="img" aria-label="Ilustración animada: un bot trabaja en su laptop y responde por WhatsApp a un cliente"><div class="bw"><svg viewBox="0 0 160 170" aria-hidden="true" shape-rendering="crispEdges"><rect x="70" y="0" width="20" height="20" fill="#00C2FF" class="tip"/><rect x="70" y="20" width="20" height="20" fill="#1B2550"/><rect x="30" y="40" width="100" height="10" fill="#1B2550"/><rect x="20" y="50" width="120" height="50" fill="#1B2550"/><rect x="30" y="100" width="100" height="10" fill="#1B2550"/><rect x="0" y="60" width="20" height="30" fill="#00C2FF"/><rect x="140" y="60" width="20" height="30" fill="#00C2FF"/><rect x="30" y="50" width="100" height="50" fill="#0A1128"/><rect x="50" y="60" width="20" height="20" fill="#00C2FF" class="eye ek"/><rect x="90" y="60" width="20" height="20" fill="#00C2FF" class="eye ek"/><rect x="60" y="90" width="40" height="10" fill="#00C2FF"/><rect x="40" y="110" width="80" height="40" fill="#1B2550"/><rect x="24" y="112" width="112" height="46" fill="#CBD5E1"/><rect x="74" y="128" width="12" height="12" fill="#00C2FF"/><rect x="12" y="158" width="136" height="8" fill="#94A3B8"/><g class="h1"><rect x="6" y="106" width="16" height="30" fill="#1B2550"/><rect x="6" y="136" width="16" height="10" fill="#00C2FF"/></g><g class="h2"><rect x="138" y="106" width="16" height="30" fill="#1B2550"/><rect x="138" y="136" width="16" height="10" fill="#00C2FF"/></g></svg></div><div class="mp"><div class="mh"><i></i><div>Tu negocio<small>bot · en línea</small></div></div><div class="cw"><div class="rw"><div class="bb c m1">Hola, ¿cuánto cuesta un corte?</div></div><div class="rw"><div class="dt t1"><i></i><i></i><i></i></div><div class="bb b m2">¡Hola! Sale $12.000 ¿Agendamos?</div></div><div class="rw"><div class="bb c m3">Sí, mañana a las 11:00</div></div><div class="rw"><div class="dt t2"><i></i><i></i><i></i></div><div class="bb b m4">Listo, quedaste agendado ✓✓</div></div></div></div></div><h4>Bot de WhatsApp</h4><p>Responde precios, horarios y preguntas frecuentes las 24 horas.</p><div class="pr">$30.000 + $10.000 al mes</div></div>
 <div class="s"><div class="sc" role="img" aria-label="Ilustración animada: una laptop mostrando una página web profesional con animaciones"><div class="lp"><div class="lid"><div class="scn"><div class="pg"><div class="nv"><b></b><em>Aurora</em><u></u><u></u><u></u><span class="nb">Reservar</span></div><div class="hr"><h5 class="wi1">Tu negocio,<br><i>a un toque.</i></h5><div class="sp wi2">Reseñas, reservas y atención automática en un solo lugar.</div><div class="wb wi3">Cotizar</div><div class="fc wi2"><div class="fs">★★★★★</div><b>4,9</b> <small>128 reseñas</small><div class="fl"></div><div class="fl s2"></div></div></div><div class="ft"><div class="c1"><i></i><b>Reseñas</b>Más estrellas en Google</div><div class="c1 d2"><i></i><b>Bot 24/7</b>Responde por ti</div><div class="c1 d3"><i></i><b>Web</b>Rápida y clara</div></div><div class="sx"><div><b>4,9★</b>Google</div><div><b>24/7</b>Atención</div><div><b>+128</b>Reseñas</div></div><div class="cb">Agenda tu hora hoy</div></div><svg class="cu" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l7 19 3-8 8-3z" fill="#fff" stroke="#0A1128" stroke-width="1.6" stroke-linejoin="round"/></svg></div></div><div class="lb"></div></div></div><h4>Página web</h4><p>Sitio rápido y profesional con tus servicios, precios y botón de contacto.</p><div class="pr">Cotiza por WhatsApp</div></div>
-<div class="s"><div class="sc gp" role="img" aria-label="Ilustración animada: un perfil de Google sin reseñas y luego con muchas reseñas de cinco estrellas"><div class="tg"><span class="pa">Antes</span><span class="pd">Después</span></div><div class="gm"><div class="gx"><div class="bf"><div class="ph">Sin fotos</div><div class="gi"><b>Salón Aurora</b><div class="rt"><span class="gr">Sin reseñas</span> <span class="gy">☆☆☆☆☆</span></div><div class="ln">Peluquería</div><div class="ac"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="wn">Horario no disponible</div><div class="wn">Sin descripción</div><div class="own">¿Eres el dueño? Reclama este perfil</div></div></div><div class="af"><div class="ph ph2"><span>24 fotos</span></div><div class="gi"><b>Salón Aurora <em class="vf">✓</em></b><div class="rt"><strong>4,9</strong> <span class="ys"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> <span class="gr">(128)</span></div><div class="ln">Peluquería · <span class="gn">Abierto</span> · Cierra 20:00</div><div class="ac on"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="br"><u style="--w:92%"></u><u style="--w:6%"></u><u style="--w:2%"></u></div><div class="rvw"><span class="av">M</span><div><span class="ys sm"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span>Excelente atención</div></div></div></div></div></div></div><h4>Google Business Profile</h4><p>Creamos y optimizamos tu perfil para que aparezcas en Maps y en el buscador.</p><div class="pr">Incluido en el Pack Pro ($25.000)</div></div>
+<div class="s"><div class="sc gp" role="img" aria-label="Ilustración animada: un perfil de Google sin reseñas y luego con muchas reseñas de cinco estrellas"><div class="tg"><span class="pa">Antes</span><span class="pd">Después</span></div><div class="gm"><div class="gx"><div class="bf"><div class="ph">Sin fotos</div><div class="gi"><b>Salón Aurora</b><div class="rt"><span class="gr">Sin reseñas</span> <span class="gy">☆☆☆☆☆</span></div><div class="ln">Peluquería</div><div class="ac"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="wn">Horario no disponible</div><div class="wn">Sin descripción</div><div class="own">¿Eres el dueño? Reclama este perfil</div></div></div><div class="af"><div class="ph ph2"><span>24 fotos</span></div><div class="gi"><b>Salón Aurora <em class="vf">✓</em></b><div class="rt"><strong>4,9</strong> <span class="ys"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span> <span class="gr">(128)</span></div><div class="ln">Peluquería · <span class="gn">Abierto</span> · Cierra 20:00</div><div class="ac on"><i>Llamar</i><i>Ruta</i><i>Web</i></div><div class="br"><u style="--w:92%"></u><u style="--w:6%"></u><u style="--w:2%"></u></div><div class="rvw"><span class="av">M</span><div><span class="ys sm"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span>Excelente atención</div></div></div></div></div></div></div><h4>Google Business Profile</h4><p>Creamos y optimizamos tu perfil para que aparezcas en Maps y en el buscador.</p><div class="pr">Incluido en el Pack Pro ($30.000)</div></div>
 </div>
 <p class="rf">Animaciones e ilustraciones de ejemplo, solo referenciales.</p>
 </div></section>
@@ -561,15 +580,15 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 <h2>Packs y precios</h2>
 <p class="lead">Elige el que se ajusta a tu negocio. Todos se coordinan por WhatsApp.</p>
 <div class="grid">
-<div class="p"><h4>Pack Básico</h4><div class="price">$20.000</div><small>Pago único</small>
+<div class="p"><h4>Pack Básico</h4><div class="price">$25.000</div><small>Pago único</small>
 <ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Configuración del código QR de respaldo</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20el%20Pack%20B%C3%A1sico" data-wa="Hola, quiero cotizar el Pack Básico"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Básico</a></div>
-<div class="p rec"><span class="tag">Más pedido</span><h4>Pack Pro</h4><div class="price">$25.000</div><small>Pago único</small>
+<div class="p rec"><span class="tag">Más pedido</span><h4>Pack Pro</h4><div class="price">$30.000</div><small>Pago único</small>
 <ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Código QR de respaldo</li><li>Creamos tu Google Business Profile por ti</li><li>Listo para recibir reseñas desde el primer día</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20el%20Pack%20Pro" data-wa="Hola, quiero cotizar el Pack Pro"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Pro</a></div>
 <div class="p"><h4>Bot de WhatsApp</h4><div class="price">$30.000</div><small>Creación, más $10.000 al mes</small>
 <ul><li>Creación y configuración del bot según los términos de WhatsApp</li><li>Responde precios, horarios y preguntas frecuentes</li><li>Atención y mantención 24/7 incluidas en la mensualidad</li></ul>
-<a class="btn" href="https://wa.me/56938766298?text=Hola,%20me%20interesa%20el%20Bot%20de%20WhatsApp" data-wa="Hola, me interesa el Bot de WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Bot</a></div>
+<a class="btn" href="https://wa.me/56938766298?text=Hola,%20me%20interesa%20el%20Bot%20de%20WhatsApp" data-wa="Hola, me interesa el Bot de WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Bot</a><a class="tosl" href="#terminos" data-tos>Ver términos del bot y de WhatsApp</a></div>
 </div>
 <div class="gar" id="garantia"><div class="gic"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#00C2FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.1-8 9-4.8-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
 <div class="gtx"><h3>Garantía de funcionamiento</h3><p>Te lo entregamos funcionando. Si algo falla, te ayudamos directo por WhatsApp.</p>
@@ -597,6 +616,7 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 <details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, con ambos. Si el celular no tiene NFC, tu cliente puede escanear el código QR de respaldo.</p></details>
 <details><summary>¿Cuánto demora la entrega?</summary><p>24 a 48 horas hábiles según el pack. Te confirmamos la fecha exacta al cotizar, antes de pagar.</p></details>
 <details><summary>¿Cómo se paga?</summary><p>Por transferencia bancaria. Coordinamos todo por WhatsApp y confirmas el valor final antes de pagar.</p></details>
+<details><summary>¿Qué condiciones tiene el servicio?</summary><p>Los precios son referenciales y se confirman al cotizar. El pago es por transferencia y la entrega toma 24 a 48 horas hábiles. El bot depende de las políticas de WhatsApp. <a class="tosl" href="#terminos" data-tos>Ver Términos del Servicio completos</a></p></details>
 <details><summary>¿Sirve para cualquier negocio?</summary><p>Sí. Está pensado para negocios locales, como salones, restaurantes, clínicas, talleres y tiendas, que quieren más reseñas y más clientes.</p></details>
 </div></div></section>
 
@@ -606,14 +626,15 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 <a class="btn" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp</a>
 </div></section>
 
-<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span class="fk"><a href="#terminos" id="tos">Términos del Servicio</a> · Medios de pago: Transferencia bancaria</span><span>+56 9 3876 6298 · <a href="#">Instagram</a></span></div></footer>
+<footer><div class="w"><span>© 2026 TargetBiz. Tu negocio, a un toque.</span><span class="fk"><a href="#terminos" id="tos">Términos del Servicio</a> · Medios de pago: Transferencia bancaria</span><span>+56 9 3876 6298<span id="igw" hidden> · <a id="ig" href="#">Instagram</a></span></span></div></footer>
 
 <dialog id="terminos" aria-labelledby="tt"><h3 id="tt">Términos del Servicio</h3>
 <ul>
 <li>Los precios publicados son referenciales. El valor final se confirma por WhatsApp al cotizar.</li>
 <li>Medio de pago: transferencia bancaria.</li>
 <li>Plazo de entrega: 24 a 48 horas hábiles según el pack. Confirmamos la fecha exacta al cotizar.</li>
-<li>Pack Básico y Pack Pro son de pago único.</li>
+<li>Llavero NFC: $8.000 (3 llaveros por $20.000). Placa NFC: $20.000 ($25.000 con llavero).</li>
+<li>Pack Básico ($25.000) y Pack Pro ($30.000) son de pago único.</li>
 <li>Bot de WhatsApp: $30.000 de creación más $10.000 mensuales, que incluyen atención y mantención.</li>
 <li>Bot de WhatsApp: su disponibilidad puede variar según las políticas de WhatsApp, por lo que no se garantiza que su funcionamiento sea permanente. Haremos todo lo posible para mantenerlo activo y, si algo cambia, te ayudamos por WhatsApp.</li>
 <li>Si algo falla, te ayudamos por WhatsApp: +56 9 3876 6298.</li>
@@ -626,7 +647,7 @@ details{box-shadow:0 1px 2px #0A11280A;transition:box-shadow .25s,border-color .
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
 <script src="models3d.js" defer></script>
 <script>
-const CFG={wa:'56938766298'};
+const CFG={wa:'56938766298',ig:''}; /* ig: pega aquí el link de tu Instagram, ej. 'https://instagram.com/tu_usuario' */
 document.querySelectorAll('[data-wa]').forEach(a=>{if(!a.getAttribute('href'))a.href='https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(a.dataset.wa);a.target='_blank';a.rel='noopener'});
 const still=matchMedia('(prefers-reduced-motion:reduce)').matches;
 const io=new IntersectionObserver(es=>es.forEach(e=>{
@@ -732,6 +753,9 @@ const t0=performance.now();
 (function f(now){S.forEach(o=>{if(o.vis)o.fn(((now-t0)/1000)%o.P,o.k)});requestAnimationFrame(f)})(t0);
 })();
 
+
+(function(){const w=document.getElementById('igw'),a=document.getElementById('ig');if(w&&a&&CFG.ig){a.href=CFG.ig;a.target='_blank';a.rel='noopener';w.hidden=false}})();
+(function(){const d=document.getElementById('terminos');if(!d)return;document.querySelectorAll('[data-tos]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();d.showModal?d.showModal():d.setAttribute('open','')}))})();
 </script>
 </body>
 </html>
