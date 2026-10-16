@@ -34,7 +34,7 @@
 <link rel="apple-touch-icon" href="apple-touch-icon-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&family=Pixelify+Sans:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#0A1128;--navy2:#121C3F;--cy:#00C2FF;--bg:#F5F8FF;--mut:#475569;--line:#DDE5F5}
 *{box-sizing:border-box;margin:0}
@@ -502,6 +502,110 @@ img,svg,canvas,video{max-width:100%}
 .p .pd li{padding:5px 0 5px 22px;font-size:14px;color:var(--mut)}.p .pd li::before{content:"★";color:#E5A400;font-size:12px;top:7px}
 .p.rec details.pd{border-color:#2F3C73}.p.rec .pd li{color:#CBD5E1}
 @media(max-width:380px){.bchat{flex:none;width:100%}.chips button{font-size:13px;padding:8px 12px}}
+
+/* ===== Ajustes: bot automático y packs más limpios ===== */
+.botbtn{cursor:default}
+.bchat{gap:14px}
+.bchat .bub{min-height:112px;display:flex;align-items:center}
+.bchat .btn{align-self:flex-start}
+.packs .lead{margin-bottom:44px}
+.packs .grid{gap:22px}
+.packs .p{padding:30px 26px;border-radius:22px;box-shadow:0 1px 2px #0A11280A;transition:transform .3s cubic-bezier(.2,.7,.3,1),box-shadow .3s}
+.packs .p.rec{transform:none;box-shadow:0 26px 50px -30px #00C2FF99}
+.packs .p h4{font-size:20px;letter-spacing:-.01em}
+.packs .p .hook{font-size:14px;font-weight:700;margin:6px 0 0}
+.packs .p .price,.packs .p.rec .price{font-size:30px;font-weight:700;letter-spacing:-.02em;margin:16px 0 2px}
+.packs .p small{font-size:13px;margin-top:0}
+.packs .p .main{margin:18px 0 0;padding:14px 16px;border-radius:14px}
+.packs .p .main b{font-size:15px}
+.packs .p .main span{font-size:13px;line-height:1.45}
+.packs .p ul{margin:22px 0 26px;padding-top:18px;border-top:1px solid var(--line)}
+.packs .p.rec ul{border-top-color:#2A3768}
+.packs .p li{font-size:14.5px;line-height:1.45;padding:5px 0 5px 24px}
+.packs .p:not(.rec) li{color:#475569}
+.packs .p.rec li{color:#CBD5E1}
+.packs .p li::before{top:5px}
+@media(min-width:600px){.packs .p .hook{min-height:2.8em}}
+@media(hover:hover){.packs .p:hover,.packs .p.rec:hover{transform:translateY(-4px)}.packs .p:hover{box-shadow:0 22px 44px -28px #0A112866}.packs .p.rec:hover{box-shadow:0 30px 56px -28px #00C2FFAA}}
+@keyframes pin{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+.packs .grid.rvp:not(.in) .p{opacity:0}
+.packs .grid.in .p{animation:pin .6s cubic-bezier(.2,.7,.3,1) backwards}
+.packs .grid.in .p:nth-child(2){animation-delay:.09s}.packs .grid.in .p:nth-child(3){animation-delay:.18s}.packs .grid.in .p:nth-child(4){animation-delay:.27s}
+@media(max-width:600px){.packs .p{padding:26px 22px}}
+
+/* ===== Hero: escena NFC, bot divertido, proceso interactivo ===== */
+.tap{position:relative;container-type:inline-size;width:min(400px,100%);aspect-ratio:1/.92;margin:auto;animation:fl 6s ease-in-out infinite}
+.tp-glow{position:absolute;inset:-6% -8%;background:radial-gradient(closest-side,#00C2FF33,#0000 72%);pointer-events:none}
+.tp-plate{position:absolute;left:0;bottom:4cqw;width:86cqw;height:36cqw;border-radius:6cqw;flex-direction:row-reverse;justify-content:space-between;background:linear-gradient(145deg,#16236A,#0F1A44 60%,#121C3F);border:1px solid #2F3C73;box-shadow:0 5cqw 10cqw -3cqw #000A,inset 0 1px 0 #ffffff14;display:flex;align-items:center;gap:4cqw;padding:0 9cqw 0 7cqw}
+.tp-plate>svg{width:14cqw;height:14cqw;flex:none;overflow:visible}
+.tp-plate .w1{animation:tw 8s infinite both}.tp-plate .w2{animation:tw 8s .12s infinite both}.tp-plate .w3{animation:tw 8s .24s infinite both}
+@keyframes tw{0%,30%{opacity:.35}38%,60%{opacity:1}70%,100%{opacity:.35}}
+.tp-tx{display:flex;flex-direction:column;gap:1cqw;min-width:0}.tp-tx b{font-size:4.1cqw;color:#fff;line-height:1.15;letter-spacing:-.01em}.tp-tx span{font-size:3cqw;color:#9FB0D4;line-height:1.25}
+.tp-r{position:absolute;left:calc(86cqw - 16cqw);top:50%;width:14cqw;height:14cqw;margin:-7cqw 0 0 -7cqw;border:2px solid var(--cy);border-radius:50%;opacity:0;pointer-events:none;animation:tr 8s infinite both}
+.tp-r.r2{animation-delay:.3s}.tp-r.r3{animation-delay:.6s}
+@keyframes tr{0%,30%{opacity:0;transform:scale(.6)}34%{opacity:.7}52%,100%{opacity:0;transform:scale(2.6)}}
+.tp-phone{position:absolute;right:2cqw;top:0;width:32cqw;height:58cqw;border-radius:6cqw;background:#0A1128;border:.9cqw solid #3A4672;box-shadow:0 6cqw 12cqw -3cqw #000B;padding:1.6cqw;transform:translate(0,7cqw) rotate(-3deg);animation:tpp 8s cubic-bezier(.5,0,.3,1) infinite}
+@keyframes tpp{0%{transform:translate(4cqw,-6cqw) rotate(5deg)}22%,72%{transform:translate(0,7cqw) rotate(-3deg)}92%,100%{transform:translate(4cqw,-6cqw) rotate(5deg)}}
+.tp-scr{height:100%;border-radius:4.4cqw;background:#F5F8FF;padding:3cqw 2.6cqw;display:flex;flex-direction:column;align-items:center;gap:2cqw;color:var(--navy);overflow:hidden}
+.tp-top{align-self:stretch;font-size:2.7cqw;font-weight:800;display:flex;align-items:center;gap:1.2cqw;padding-bottom:1.6cqw;border-bottom:1px solid #DDE5F5}
+.tp-top b{display:grid;place-items:center;width:4.2cqw;height:4.2cqw;border-radius:50%;background:#fff;color:#4285F4;font-size:2.8cqw;box-shadow:0 0 0 1px #DDE5F5}
+.tp-biz{font-size:3.2cqw;font-weight:800;margin-top:2cqw;text-align:center}
+.tp-st{display:flex;gap:.6cqw;font-size:5cqw;color:#FBBC04;line-height:1}
+.tp-st i{font-style:normal;display:inline-block;animation:ts 8s infinite both}
+.tp-st i:nth-child(2){animation-delay:.12s}.tp-st i:nth-child(3){animation-delay:.24s}.tp-st i:nth-child(4){animation-delay:.36s}.tp-st i:nth-child(5){animation-delay:.48s}
+@keyframes ts{0%,36%{opacity:.18;transform:scale(.7);filter:grayscale(1)}42%{opacity:1;transform:scale(1.35);filter:none}46%,80%{opacity:1;transform:none;filter:none}92%,100%{opacity:.18;transform:scale(.7);filter:grayscale(1)}}
+.tp-ok{margin-top:auto;width:100%;text-align:center;font-size:2.7cqw;font-weight:800;background:var(--navy);color:#fff;border-radius:99px;padding:2cqw 0;animation:tk 8s infinite both}
+@keyframes tk{0%,52%{background:#CBD5E1;color:#64748B}58%,86%{background:var(--cy);color:var(--navy)}94%,100%{background:#CBD5E1;color:#64748B}}
+.tp-toast{position:absolute;left:1cqw;top:16cqw;display:flex;align-items:center;gap:2.6cqw;background:#0F1A44;border:1px solid #00C2FF66;border-radius:4cqw;padding:2.6cqw 4cqw 2.6cqw 3cqw;box-shadow:0 4cqw 9cqw -2cqw #000A;animation:tt 8s infinite both}
+.tp-ck{display:grid;place-items:center;width:6.4cqw;height:6.4cqw;border-radius:50%;background:var(--cy);color:var(--navy);font-weight:800;font-size:3.6cqw}
+.tp-toast b{display:block;font-size:3.3cqw;color:#fff;line-height:1.2}.tp-ys{display:block;font-size:3.2cqw;color:#FBBC04;letter-spacing:.3cqw;line-height:1.2}
+@keyframes tt{0%,56%{opacity:0;transform:translateY(3cqw) scale(.94)}64%,88%{opacity:1;transform:none}96%,100%{opacity:0;transform:translateY(-2cqw)}}
+@media(max-width:700px){.tap{width:min(340px,92%)}}
+
+.bchat .bub{min-height:138px;flex-direction:column;align-items:flex-start;justify-content:center;gap:6px}
+.bub .bt{display:flex;align-items:center;gap:6px;font-family:'Pixelify Sans',ui-monospace,monospace;font-size:11px;letter-spacing:.08em;color:#0077A8}
+.bub .bt i{width:7px;height:7px;background:#25D366;display:inline-block;animation:dj .9s infinite}
+.bub #bm{font-family:'Pixelify Sans',ui-monospace,'Courier New',monospace;font-weight:500;font-size:17px;line-height:1.4;letter-spacing:.01em;color:var(--navy)}
+
+.stp{margin-top:36px}
+.stp-nav{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.stp-line{position:absolute;left:10%;right:10%;top:23px;height:3px;border-radius:3px;background:var(--line)}
+.stp-line i{display:block;height:100%;width:calc(var(--p,0)*1%);background:linear-gradient(90deg,var(--cy),#4F7BFF);border-radius:3px;transition:width .5s cubic-bezier(.2,.7,.3,1)}
+.stp-nav button{all:unset;position:relative;z-index:1;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:0 4px 4px;border-radius:14px}
+.stp-nav button:focus-visible{outline:3px solid var(--cy);outline-offset:3px}
+.stp-nav .n{position:relative;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid var(--line);color:var(--mut);font-weight:800;font-size:17px;transition:background .3s,border-color .3s,color .3s,transform .3s,box-shadow .3s}
+.stp-nav .n svg{position:absolute;width:20px;height:20px;opacity:0;transform:scale(.4);transition:opacity .25s,transform .25s}
+.stp-nav button:hover .n{border-color:var(--cy);transform:translateY(-2px)}
+.stp-nav .t{font-size:14.5px;font-weight:800;color:var(--mut);line-height:1.25;transition:color .3s}
+.stp-nav .t em{display:block;font-style:normal;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#64748B;font-weight:800;margin-bottom:2px}
+.stp-nav .done .n{background:var(--cy);border-color:var(--cy);color:var(--navy)}.stp-nav .done .n b{opacity:0}.stp-nav .done .n svg{opacity:1;transform:none}
+.stp-nav [aria-selected=true] .n{background:var(--navy);border-color:var(--navy);color:#fff;box-shadow:0 0 0 6px #00C2FF33;transform:none}
+.stp-nav [aria-selected=true] .n b{opacity:1}.stp-nav [aria-selected=true] .n svg{opacity:0}
+.stp-nav [aria-selected=true] .t{color:var(--navy)}
+.stp-panels{display:grid;margin-top:28px}
+.stp-p{grid-area:1/1;display:flex;gap:24px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:22px;padding:32px;box-shadow:0 18px 40px -28px #0A112855;visibility:hidden;opacity:0;transform:translateY(10px);transition:opacity .35s,transform .35s,visibility 0s .35s}
+.stp-p.on{visibility:visible;opacity:1;transform:none;transition:opacity .4s .05s,transform .4s .05s,visibility 0s}
+.stp-p .ic{flex:none;display:grid;place-items:center;width:64px;height:64px;border-radius:18px;background:var(--navy);color:var(--cy)}.stp-p .ic svg{width:30px;height:30px}
+.stp-p .bd{min-width:0}
+.stp-p .who{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 12px;border-radius:99px;margin-bottom:10px}
+.stp-p .who.yo{background:#E8F0FE;color:#1A5FB4}.stp-p .who.nos{background:#DFF6FF;color:#006B94}
+.stp-p h3{font-size:24px;font-weight:800;letter-spacing:-.02em;margin-bottom:6px}
+.stp-p p{color:var(--mut);font-size:16.5px;max-width:60ch}
+.stp-p ul{list-style:none;padding:0;margin:18px 0 0;display:grid;gap:9px}
+.stp-p li{position:relative;padding-left:28px;font-size:15px;color:#334155}
+.stp-p li::before{content:"✓";position:absolute;left:0;top:0;width:19px;height:19px;border-radius:50%;background:#DFF6FF;color:#006B94;font-weight:800;font-size:11px;display:grid;place-items:center;margin-top:2px}
+.stp-ctl{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px}
+.stp-ctl span{font-size:14px;font-weight:800;color:var(--mut)}
+.stp-ctl button{font:inherit;font-size:14.5px;font-weight:800;color:var(--navy);background:#fff;border:1px solid var(--line);border-radius:99px;padding:10px 18px;min-height:44px;cursor:pointer;transition:border-color .2s,opacity .2s}
+.stp-ctl button:hover:not(:disabled){border-color:var(--cy)}.stp-ctl button:disabled{opacity:.4;cursor:default}
+.stp-trust{list-style:none;padding:0;margin:28px 0 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.stp-trust li{display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:800;color:var(--navy);background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.stp-trust svg{flex:none;width:22px;height:22px;padding:4px;border-radius:50%;background:var(--cy);color:var(--navy)}
+@media(max-width:700px){
+ .stp-nav{gap:2px}.stp-nav .t{display:none}.stp-line{top:23px}
+ .stp-p{flex-direction:column;gap:16px;padding:24px 20px}.stp-p h3{font-size:21px}
+ .stp-ctl button{padding:10px 14px;font-size:14px}
+}
 </style>
 </head>
 <body>
@@ -519,9 +623,11 @@ img,svg,canvas,video{max-width:100%}
 <p>Tarjetas NFC para reseñas, bots de WhatsApp, páginas web y Google Business. Tecnología simple para que más clientes te encuentren y te elijan.</p>
 <div class="btns"><a class="btn wa" href="https://wa.me/56938766298?text=Hola,%20quiero%20cotizar%20con%20TargetBiz" data-wa="Hola, quiero cotizar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar por WhatsApp</a><a class="btn o" href="#packs">Ver precios</a></div>
 </div>
-<div class="card" role="img" aria-label="Tarjeta NFC de TargetBiz enviando una reseña de cinco estrellas">
-<svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8,0H48A8,8 0 0 1 48,16H8A8,8 0 0 1 8,0Z" fill="#0A1128"/><rect x="20" y="12" width="16" height="24" fill="#0A1128"/><circle cx="28" cy="48" r="8" fill="#00C2FF"/></svg>
-<div class="chip">Reseña enviada <span class="gs" aria-hidden="true"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></span></div>
+<div class="tap" role="img" aria-label="Animación: un cliente acerca su celular a la placa NFC de TargetBiz, califica con cinco estrellas y el negocio recibe una nueva reseña en Google.">
+<div class="tp-glow"></div>
+<div class="tp-plate"><svg viewBox="0 0 48 48" fill="none" stroke="#00C2FF" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M14 17a10 10 0 0 1 0 14" class="w1"/><path d="M21 12a17 17 0 0 1 0 24" class="w2"/><path d="M28 7a24 24 0 0 1 0 34" class="w3"/></svg><div class="tp-tx"><b>Acerca tu celular</b><span>y deja tu reseña en Google</span></div><i class="tp-r r1"></i><i class="tp-r r2"></i><i class="tp-r r3"></i></div>
+<div class="tp-phone"><div class="tp-scr"><div class="tp-top"><b>G</b> Reseñas</div><div class="tp-biz">Tu negocio</div><div class="tp-st"><i>★</i><i>★</i><i>★</i><i>★</i><i>★</i></div><div class="tp-ok">Publicar reseña</div></div></div>
+<div class="tp-toast"><span class="tp-ck">✓</span><div><b>Nueva reseña</b><span class="tp-ys">★★★★★</span></div></div>
 </div>
 </div></header>
 
@@ -596,9 +702,8 @@ img,svg,canvas,video{max-width:100%}
 <div><h2>Tu bot atiende. Tú trabajas tranquilo.</h2>
 <p class="lead">Mientras estás con un cliente, el bot de WhatsApp responde precios, horarios y agenda por ti, a cualquier hora.</p>
 <ul class="bl"><li>Respuestas inmediatas, de día y de noche</li><li>Menos mensajes repetidos para ti</li><li>Cada consulta termina en una cotización o una hora agendada</li></ul>
-<div class="botbox"><button class="botbtn" id="bot" aria-label="Bot de TargetBiz. Haz clic para conversar"><svg viewBox="0 0 160 160" aria-hidden="true" shape-rendering="crispEdges"><rect x="70" y="0" width="20" height="20" fill="#00C2FF" class="tip"/><rect x="70" y="20" width="20" height="20" fill="#1B2550"/><rect x="30" y="40" width="100" height="10" fill="#1B2550"/><rect x="20" y="50" width="120" height="50" fill="#1B2550"/><rect x="30" y="100" width="100" height="10" fill="#1B2550"/><rect x="0" y="60" width="20" height="30" fill="#00C2FF"/><rect x="140" y="60" width="20" height="30" fill="#00C2FF"/><rect x="30" y="50" width="100" height="50" fill="#0A1128"/><g id="eyes"><rect x="50" y="60" width="20" height="20" fill="#00C2FF" class="eye"/><rect x="90" y="60" width="20" height="20" fill="#00C2FF" class="eye"/></g><rect x="60" y="90" width="40" height="10" fill="#00C2FF" class="mouth"/><rect x="40" y="110" width="80" height="40" fill="#1B2550"/><rect x="60" y="120" width="40" height="20" fill="#0A1128"/><rect x="70" y="120" width="20" height="10" fill="#00C2FF" class="tip"/><rect x="20" y="110" width="20" height="30" fill="#1B2550"/><g id="arm"><rect x="120" y="110" width="20" height="30" fill="#1B2550"/></g><rect x="40" y="150" width="30" height="10" fill="#0A1128"/><rect x="90" y="150" width="30" height="10" fill="#0A1128"/></svg></button><div class="bchat"><div class="bub" id="bub" aria-live="polite"><small class="qe" id="qe"></small><span id="bm">¡Hola! Soy el bot de TargetBiz. Pregúntame lo que quieras 👇</span></div>
-<div class="chips" id="chips"><button type="button" data-q="¿Cuánto cuestan los packs?">Precios</button><button type="button" data-q="¿Cómo funciona la placa NFC?">Placa NFC</button><button type="button" data-q="¿Qué hace el bot?">¿Qué haces?</button><button type="button" data-q="Quiero cotizar">Cotizar</button><button type="button" data-q="Hazme bailar">💃 Bailar</button></div>
-<form class="ask" id="ask"><input id="askq" type="text" placeholder="Escríbele algo al bot…" maxlength="80" autocomplete="off" aria-label="Escríbele una pregunta al bot"><button type="submit" aria-label="Enviar pregunta">➤</button></form></div></div></div>
+<div class="botbox"><div class="botbtn" id="bot" role="img" aria-label="Bot de TargetBiz"><svg viewBox="0 0 160 160" aria-hidden="true" shape-rendering="crispEdges"><rect x="70" y="0" width="20" height="20" fill="#00C2FF" class="tip"/><rect x="70" y="20" width="20" height="20" fill="#1B2550"/><rect x="30" y="40" width="100" height="10" fill="#1B2550"/><rect x="20" y="50" width="120" height="50" fill="#1B2550"/><rect x="30" y="100" width="100" height="10" fill="#1B2550"/><rect x="0" y="60" width="20" height="30" fill="#00C2FF"/><rect x="140" y="60" width="20" height="30" fill="#00C2FF"/><rect x="30" y="50" width="100" height="50" fill="#0A1128"/><g id="eyes"><rect x="50" y="60" width="20" height="20" fill="#00C2FF" class="eye"/><rect x="90" y="60" width="20" height="20" fill="#00C2FF" class="eye"/></g><rect x="60" y="90" width="40" height="10" fill="#00C2FF" class="mouth"/><rect x="40" y="110" width="80" height="40" fill="#1B2550"/><rect x="60" y="120" width="40" height="20" fill="#0A1128"/><rect x="70" y="120" width="20" height="10" fill="#00C2FF" class="tip"/><rect x="20" y="110" width="20" height="30" fill="#1B2550"/><g id="arm"><rect x="120" y="110" width="20" height="30" fill="#1B2550"/></g><rect x="40" y="150" width="30" height="10" fill="#0A1128"/><rect x="90" y="150" width="30" height="10" fill="#0A1128"/></svg></div><div class="bchat"><div class="bub" id="bub" aria-live="off"><small class="bt"><i></i>BOT TARGETBIZ · EN LÍNEA</small><span id="bm">¡BEEP BOOP! Soy el bot de TargetBiz y vengo a vender por ti 🚀</span></div>
+</div></div></div>
 </div></section>
 
 <section id="productos"><div class="w">
@@ -621,24 +726,20 @@ img,svg,canvas,video{max-width:100%}
 
 <section class="packs" id="packs"><div class="w">
 <h2>Packs y precios</h2>
-<p class="lead">Elige el que se ajusta a tu negocio. Todos se coordinan por WhatsApp.</p>
-<div class="grid">
-<div class="p"><h4>Pack 3 Llaveros</h4><p class="hook">Lleva tus reseñas de Google a todas partes</p><div class="price">$20.000</div><small>Los 3 llaveros · Pago único · Ahorras $4.000</small>
-<ul><li>3 Llaveros NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Uno para cada persona de tu equipo</li></ul>
-<details class="pd"><summary>Ver beneficios</summary><ul><li><b>Portabilidad:</b> llevas tus opiniones de Google a todas partes</li><li>Ideal para equipos, ferias y visitas a domicilio</li><li>Livianos y resistentes</li><li>Un toque y se abre tu página de reseñas</li></ul></details>
+<p class="lead">Una inversión pequeña que trabaja por tu negocio todos los días. Todo se coordina por WhatsApp.</p>
+<div class="grid" id="pgrid">
+<div class="p"><h4>Pack 3 Llaveros</h4><p class="hook">Lleva tus reseñas de Google a todas partes</p><div class="price">$20.000</div><small>Pago único · Ahorras $4.000</small>
+<ul><li>3 llaveros NFC con el link directo a tus reseñas</li><li>Uno para cada persona de tu equipo</li><li>Ideales para ferias y visitas a domicilio</li><li>Un toque y se abre tu página de reseñas</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola%2C%20quiero%20cotizar%20el%20Pack%203%20Llaveros" data-wa="Hola, quiero cotizar el Pack 3 Llaveros"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar 3 Llaveros</a></div>
 <div class="p"><h4>Pack Básico</h4><p class="hook">Tu mostrador pide reseñas por ti</p><div class="price">$25.000</div><small>Pago único</small>
-<ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Configuración del código QR de respaldo</li></ul>
-<details class="pd"><summary>Ver beneficios</summary><ul><li>La placa trabaja sola en tu mostrador: la reseña toma segundos</li><li>El llavero te permite pedir reseñas fuera del local</li><li>QR de respaldo si el celular no tiene NFC</li><li>Todo configurado por nosotros, listo para usar</li></ul></details>
+<ul><li>Placa NFC para tu mostrador: la reseña toma segundos</li><li>Llavero NFC para pedir reseñas fuera del local</li><li>QR de respaldo si el celular no tiene NFC</li><li>Todo configurado por nosotros, listo para usar</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola%2C%20quiero%20cotizar%20el%20Pack%20B%C3%A1sico" data-wa="Hola, quiero cotizar el Pack Básico"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Básico</a></div>
-<div class="p rec"><span class="tag">Recomendado</span><h4>Pack Pro</h4><div class="price">$30.000</div><small>Pago único</small>
-<div class="main"><em>Lo principal de este pack</em><div class="mr"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="#00C2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><b>Creamos tu Google Business Profile por ti</b></div><span>Tu negocio aparece en Google Maps y en el buscador, con tus datos listos.</span></div>
-<ul><li>Placa NFC para Google Reviews</li><li>Llavero NFC para Google Reviews</li><li>Configurados con el link directo a tus reseñas</li><li>Código QR de respaldo</li></ul>
-<details class="pd"><summary>Ver beneficios</summary><ul><li>Perfil creado y configurado por nosotros, sin trámites para ti</li><li>Con tus datos de contacto, horario y descripción</li><li>Listo para recibir reseñas desde el primer día</li><li>Placa y llavero vinculados a tu perfil</li></ul></details>
+<div class="p rec"><span class="tag">Recomendado</span><h4>Pack Pro</h4><p class="hook">Aparece en Google desde el primer día</p><div class="price">$30.000</div><small>Pago único</small>
+<div class="main"><div class="mr"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00C2FF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.1-7-11a7 7 0 0 1 14 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.6"/></svg><b>Creamos tu Google Business Profile por ti</b></div><span>Tu negocio aparece en Google Maps y en el buscador, con tus datos listos.</span></div>
+<ul><li>Placa y llavero NFC vinculados a tu perfil</li><li>Perfil con tus datos de contacto, horario y descripción</li><li>Listo para recibir reseñas desde el primer día</li><li>Código QR de respaldo</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola%2C%20quiero%20cotizar%20el%20Pack%20Pro" data-wa="Hola, quiero cotizar el Pack Pro"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Pro</a></div>
 <div class="p"><h4>Bot de WhatsApp</h4><p class="hook">Atiende a tus clientes por WhatsApp, 24/7</p><div class="price">$30.000</div><small>Creación, más $10.000 al mes</small>
-<ul><li>Creación y configuración del bot según los términos de WhatsApp</li><li>Responde precios, horarios y preguntas frecuentes</li><li>Atención y mantención 24/7 incluidas en la mensualidad</li></ul>
-<details class="pd"><summary>Ver beneficios</summary><ul><li>Respuestas inmediatas, de día y de noche</li><li>Menos mensajes repetidos para ti</li><li>Más tiempo para atender a tus clientes</li><li>Atención y mantención incluidas en la mensualidad</li></ul></details>
+<ul><li>Responde precios, horarios y preguntas frecuentes</li><li>Respuestas inmediatas, de día y de noche</li><li>Menos mensajes repetidos para ti</li><li>Atención y mantención incluidas en la mensualidad</li></ul>
 <a class="btn" href="https://wa.me/56938766298?text=Hola%2C%20me%20interesa%20el%20Bot%20de%20WhatsApp" data-wa="Hola, me interesa el Bot de WhatsApp"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Cotizar Bot</a><a class="tosl" href="#terminos" data-tos>Ver términos del bot y de WhatsApp</a></div>
 </div>
 <div class="gar" id="garantia"><div class="gic"><svg viewBox="0 0 24 24" width="38" height="38" fill="none" stroke="#00C2FF" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.1-8 9-4.8-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div>
@@ -649,15 +750,14 @@ img,svg,canvas,video{max-width:100%}
 
 <section id="proceso"><div class="w">
 <h2>Cómo trabajamos</h2>
-<p class="lead">Cinco pasos claros, desde tu primer mensaje hasta tu negocio funcionando.</p>
-<ol class="tl" id="tl">
-<li><span>1</span><em>Tú</em><h4>Nos escribes</h4><p>Cuéntanos de tu negocio y qué necesitas. Te respondemos por WhatsApp.</p></li>
-<li><span>2</span><em>Nosotros</em><h4>Te cotizamos</h4><p>Recibes el precio final y el plazo de entrega, sin letra chica.</p></li>
-<li><span>3</span><em>Tú</em><h4>Confirmas y pagas</h4><p>Pagas por transferencia bancaria y damos inicio a tu pedido.</p></li>
-<li><span>4</span><em>Nosotros</em><h4>Lo producimos</h4><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p></li>
-<li><span>5</span><em>Nosotros</em><h4>Entrega y soporte</h4><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p></li>
-</ol>
-<p style="margin-top:20px"><a class="btn wa" href="https://wa.me/56938766298?text=Hola,%20quiero%20empezar%20con%20TargetBiz" data-wa="Hola, quiero empezar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Empezar por WhatsApp</a></p>
+<p class="lead">Cinco pasos claros, desde tu primer mensaje hasta tu negocio funcionando. Toca cada paso para ver el detalle.</p>
+<div class="stp" id="stp">
+<div class="stp-nav" role="tablist" aria-label="Pasos para trabajar con TargetBiz"><div class="stp-line" aria-hidden="true"><i></i></div><button type="button" role="tab" id="st1" aria-controls="sp1" aria-selected="true" tabindex="0" data-i="0"><span class="n"><b>1</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t"><em>Tú</em>Nos escribes</span></button><button type="button" role="tab" id="st2" aria-controls="sp2" aria-selected="false" tabindex="-1" data-i="1"><span class="n"><b>2</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t"><em>Nosotros</em>Te cotizamos</span></button><button type="button" role="tab" id="st3" aria-controls="sp3" aria-selected="false" tabindex="-1" data-i="2"><span class="n"><b>3</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t"><em>Tú</em>Confirmas y pagas</span></button><button type="button" role="tab" id="st4" aria-controls="sp4" aria-selected="false" tabindex="-1" data-i="3"><span class="n"><b>4</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t"><em>Nosotros</em>Lo producimos</span></button><button type="button" role="tab" id="st5" aria-controls="sp5" aria-selected="false" tabindex="-1" data-i="4"><span class="n"><b>5</b><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="t"><em>Nosotros</em>Entrega y soporte</span></button></div>
+<div class="stp-panels"><div class="stp-p on" role="tabpanel" id="sp1" aria-labelledby="st1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/><path d="M8 9.5h8M8 12.5h5"/></svg></div><div class="bd"><span class="who yo">Paso 1 de 5 · Tú</span><h3>Nos escribes</h3><p>Cuéntanos de tu negocio y qué necesitas. Te respondemos por WhatsApp.</p><ul><li>Cotización sin costo</li><li>Todo por WhatsApp, sin formularios ni trámites</li><li>Te orientamos para elegir el pack que mejor te sirve</li></ul></div></div><div class="stp-p" role="tabpanel" id="sp2" aria-labelledby="st2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg></div><div class="bd"><span class="who nos">Paso 2 de 5 · Nosotros</span><h3>Te cotizamos</h3><p>Recibes el precio final y el plazo de entrega, sin letra chica.</p><ul><li>Precio final confirmado por WhatsApp</li><li>Fecha de entrega exacta antes de que pagues</li><li>Sin sorpresas: lo que cotizamos es lo que pagas</li></ul></div></div><div class="stp-p" role="tabpanel" id="sp3" aria-labelledby="st3"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2.5"/><path d="M3 10.5h18M7 15h4"/></svg></div><div class="bd"><span class="who yo">Paso 3 de 5 · Tú</span><h3>Confirmas y pagas</h3><p>Pagas por transferencia bancaria y damos inicio a tu pedido.</p><ul><li>Medio de pago: transferencia bancaria</li><li>Pagas cuando ya conoces el valor y el plazo</li><li>Al confirmar el pago, comenzamos tu pedido</li></ul></div></div><div class="stp-p" role="tabpanel" id="sp4" aria-labelledby="st4"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/></svg></div><div class="bd"><span class="who nos">Paso 4 de 5 · Nosotros</span><h3>Lo producimos</h3><p>Configuramos tus tarjetas, perfil, bot o web según tu pack.</p><ul><li>Tarjetas NFC con el link directo a tus reseñas</li><li>Google Business Profile creado por nosotros (Pack Pro)</li><li>Plazo de entrega: 24 a 48 horas hábiles según el pack</li></ul></div></div><div class="stp-p" role="tabpanel" id="sp5" aria-labelledby="st5"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.2 8.1-8 9-4.8-.9-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg></div><div class="bd"><span class="who nos">Paso 5 de 5 · Nosotros</span><h3>Entrega y soporte</h3><p>Te lo dejamos funcionando y te ayudamos si algo falla.</p><ul><li>Entrega lista para usar</li><li>Soporte técnico directo por WhatsApp</li><li>Bot de WhatsApp: atención y mantención incluidas en la mensualidad</li></ul></div></div></div>
+<div class="stp-ctl"><button type="button" id="stpP" aria-label="Paso anterior">← Anterior</button><span id="stpC" aria-live="polite">Paso 1 de 5</span><button type="button" id="stpN" aria-label="Paso siguiente">Siguiente →</button></div>
+<ul class="stp-trust"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Precio final antes de pagar</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Entrega en 24 a 48 h hábiles</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Soporte directo por WhatsApp</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Sin letra chica</li></ul>
+</div>
+<p style="margin-top:32px"><a class="btn wa" href="https://wa.me/56938766298?text=Hola,%20quiero%20empezar%20con%20TargetBiz" data-wa="Hola, quiero empezar con TargetBiz"><svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Empezar por WhatsApp</a></p>
 </div></section>
 
 <section id="faq" style="background:var(--bg)"><div class="w">
@@ -665,6 +765,7 @@ img,svg,canvas,video{max-width:100%}
 <div style="margin-top:40px">
 <details><summary>¿Necesito una app para usar la tarjeta NFC?</summary><p>No. Tu cliente solo acerca el celular a la placa o al llavero y se abre tu página de reseñas de Google. Funciona con el NFC que traen la mayoría de los celulares de los últimos años.</p></details>
 <details><summary>¿Funciona con iPhone y Android?</summary><p>Sí, con ambos. Si el celular no tiene NFC, tu cliente puede escanear el código QR de respaldo.</p></details>
+<details><summary>¿Hacen NFC personalizados?</summary><p>Sí. Además de los packs, hacemos NFC personalizados, siempre a pedido. Puedes pedirlos por Instagram o por WhatsApp y te cotizamos según lo que necesites. <a class="tosl" href="#" data-wa="Hola, quiero pedir un NFC personalizado">Pedir NFC personalizado por WhatsApp</a></p></details>
 <details><summary>¿Cuánto demora la entrega?</summary><p>24 a 48 horas hábiles según el pack. Te confirmamos la fecha exacta al cotizar, antes de pagar.</p></details>
 <details><summary>¿Cómo se paga?</summary><p>Por transferencia bancaria. Coordinamos todo por WhatsApp y confirmas el valor final antes de pagar.</p></details>
 <details><summary>¿Qué condiciones tiene el servicio?</summary><p>Los precios son referenciales y se confirman al cotizar. El pago es por transferencia y la entrega toma 24 a 48 horas hábiles. El bot depende de las políticas de WhatsApp. <a class="tosl" href="#terminos" data-tos>Ver Términos del Servicio completos</a></p></details>
@@ -688,6 +789,7 @@ img,svg,canvas,video{max-width:100%}
 <li>Pack 3 Llaveros ($20.000), Pack Básico ($25.000) y Pack Pro ($30.000) son de pago único.</li>
 <li>Bot de WhatsApp: $30.000 de creación más $10.000 mensuales, que incluyen atención y mantención.</li>
 <li>Bot de WhatsApp: su disponibilidad puede variar según las políticas de WhatsApp, por lo que no se garantiza que su funcionamiento sea permanente. Haremos todo lo posible para mantenerlo activo y, si algo cambia, te ayudamos por WhatsApp.</li>
+<li>Bot de WhatsApp: existe un riesgo muy mínimo de que WhatsApp bloquee el número utilizado por el bot. El bot está programado para que esto no ocurra, pero si llegara a pasar, te avisamos y te ayudamos a resolverlo.</li>
 <li>Si algo falla, te ayudamos por WhatsApp: +56 9 3876 6298.</li>
 </ul>
 <button class="btn" id="tc" type="button">Entendido</button></dialog>
@@ -733,46 +835,30 @@ f.append(i,d);c.append(st,p,f);box.append(c)});
 sec.hidden=false;
 if(still)box.classList.add('in');else new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');o.unobserve(e.target)}}),{threshold:.2}).observe(box)})();
 (function(){const b=document.getElementById('bot');if(!b)return;
-const eyes=b.querySelector('#eyes'),bub=document.getElementById('bub'),qe=document.getElementById('qe'),bm=document.getElementById('bm'),form=document.getElementById('ask'),inp=document.getElementById('askq'),chips=document.getElementById('chips');
-let busy=false,focus=false,tm=0,k=0;
+const eyes=b.querySelector('#eyes'),bub=document.getElementById('bub'),bm=document.getElementById('bm');
+let focus=false,k=-1,vis=true,seen=false;
 function aim(x,y){const r=b.getBoundingClientRect(),cx=r.left+r.width/2,cy=r.top+r.height*.45,dx=x-cx,dy=y-cy,d=Math.hypot(dx,dy)||1,m=Math.min(d/150,1);eyes.setAttribute('transform','translate('+(dx/d*8*m).toFixed(1)+','+(dy/d*7*m).toFixed(1)+')')}
 const look=(x,y)=>{if(!focus)aim(x,y)};
 addEventListener('pointermove',e=>look(e.clientX,e.clientY));addEventListener('pointerdown',e=>look(e.clientX,e.clientY));
 const mood=(c,ms)=>{b.classList.add(c);setTimeout(()=>b.classList.remove(c),ms)};
 const wave=()=>{b.classList.remove('waving');void b.offsetWidth;b.classList.add('waving')};
-const N=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-const wa=t=>'https://wa.me/'+CFG.wa+'?text='+encodeURIComponent(t);
-const KB=[
-{k:['baila','bailar','danza'],a:'¡Pasito de píxeles! 💃',m:'dance'},
-{k:['gracias','genial','excelente'],a:'¡De nada! 😊 Aquí estoy cuando me necesites.',m:'happy'},
-{k:['envio','despacho','boleta','factura','courier','starken','chilexpress'],a:'Eso lo confirmamos directamente por WhatsApp para darte la información exacta.',l:'Hola, tengo una consulta sobre envíos y documentos'},
-{k:['entrega','demora','plazo','cuando llega'],a:'La entrega toma 24 a 48 horas hábiles según el pack. Confirmamos la fecha exacta al cotizar, antes de pagar.'},
-{k:['pago','pagar','transferencia'],a:'Se paga por transferencia bancaria. Confirmas el valor final por WhatsApp antes de pagar.'},
-{k:['precio','cuesta','cuanto','valor','pack','costo','tarifa'],a:'Llavero $8.000 · Placa NFC $20.000 · 3 llaveros $20.000 · Pack Básico $25.000 · Pack Pro $30.000 · Bot de WhatsApp $30.000 + $10.000 al mes.',l:'Hola, quiero cotizar con TargetBiz'},
-{k:['llavero'],a:'El llavero NFC lo llevas contigo y pides reseñas en cualquier lugar. Cuesta $8.000, o 3 por $20.000.'},
-{k:['placa','nfc','tarjeta','resena','reviews'],a:'La placa NFC va en tu mostrador: tu cliente acerca el celular y se abre tu página de reseñas de Google, sin apps. Incluye QR de respaldo.'},
-{k:['google','perfil','maps','business'],a:'En el Pack Pro creamos tu Google Business Profile por ti, para que aparezcas en Google Maps y en el buscador.'},
-{k:['web','pagina','sitio'],a:'También hacemos páginas web para tu negocio. El valor lo cotizamos según tu proyecto.',l:'Hola, quiero cotizar una página web'},
-{k:['bot','whatsapp','automat','atiend'],a:'Respondo precios y horarios las 24 horas y agendo por ti. Crear un bot cuesta $30.000, más $10.000 al mes de atención y mantención.',l:'Hola, me interesa el Bot de WhatsApp'},
-{k:['cotiz','comprar','quiero','contratar'],a:'¡Perfecto! 🙌 Escríbenos por WhatsApp y te cotizamos sin costo.',l:'Hola, quiero cotizar con TargetBiz'},
-{k:['quien','eres','nombre'],a:'Soy el bot de TargetBiz, hecho de píxeles. Respondo preguntas básicas y, para cotizar, te paso con una persona por WhatsApp.'},
-{k:['hola','holi','buenas','hey','buen dia','buenos dias'],a:'¡Hola! 👋 Pregúntame por precios, la placa NFC, el bot o cómo cotizar.',m:'happy'}
-];
-const reply=q=>{const n=N(q);for(const e of KB)if(e.k.some(w=>new RegExp('\\b'+w).test(n)))return e;return{a:'Mmm, eso no lo sé 🤔 Mejor te responde una persona por WhatsApp.',l:'Hola, tengo una consulta'}};
-const clearBtn=()=>bub.querySelectorAll('a.btn').forEach(x=>x.remove());
-function addBtn(t){const a=document.createElement('a');a.className='btn wa';a.href=wa(t);a.target='_blank';a.rel='noopener';a.innerHTML='<svg class="wi" aria-hidden="true"><use href="#wa"/></svg>Escribir por WhatsApp';bub.appendChild(a)}
-function ask(q){if(busy)return;busy=true;clearTimeout(tm);clearBtn();qe.textContent='Tú: '+q;
- bm.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';b.classList.add('think');const e=reply(q);
- tm=setTimeout(()=>{b.classList.remove('think');let i=0;b.classList.add('talk');bub.classList.add('cur');
-  (function t(){bm.textContent=e.a.slice(0,++i);if(i<e.a.length)tm=setTimeout(t,still?0:16);else{b.classList.remove('talk');bub.classList.remove('cur');if(e.l)addBtn(e.l);if(e.m)mood(e.m,e.m==='dance'?2800:1500);wave();busy=false}})()},still?0:650)}
-chips.addEventListener('click',ev=>{const c=ev.target.closest('button[data-q]');if(c)ask(c.dataset.q)});
-form.addEventListener('submit',ev=>{ev.preventDefault();const q=inp.value.trim();if(!q)return;inp.value='';ask(q)});
-inp.addEventListener('focus',()=>{focus=true;const r=inp.getBoundingClientRect();aim(r.left+r.width/2,r.top+r.height/2)});
-inp.addEventListener('blur',()=>{focus=false});
-const msgs=['Respondo precios y horarios, de día y de noche.','Agendo horas mientras tú atiendes a tus clientes.','¿Quieres uno para tu negocio? Escríbenos por WhatsApp.','¡Prueba preguntarme algo! 👇'];
-b.addEventListener('click',()=>{if(busy)return;k=(k+1)%msgs.length;clearBtn();qe.textContent='';bm.textContent=msgs[k];wave();mood('happy',900)});
+const MSGS=['¡BEEP BOOP! Soy el bot de TargetBiz y vengo a vender por ti 🚀','Yo trabajo por ti mientras tú duermes. Cero café, cero quejas 💰','Mientras atiendes a un cliente, yo atiendo a diez. Soy multitarea 📈','¿Cliente a las 3 AM? Yo respondo a las 3 AM. Venta salvada 💸','Respondo en segundos. Clientes felices, ventas contentas 🏆','Agendo horas por ti. No tengo manos, pero igual funciona ✅','No me enfermo, no me atraso y jamás pido vacaciones. Empleado del mes 🏆','Cada consulta que respondo puede ser una venta más para ti 💰','Menos mensajes repetidos para ti, más clientes atendidos. Matemática pura 📊','Tú cierras el local, yo sigo abierto. Las ventas no duermen 💼','Una inversión pequeña que trabaja los 365 días del año 📈','Procesando… resultado: más clientes y más tiempo libre para ti 🎯','¿Listo para vender mientras descansas? Hablemos 🤝'];
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function wait(ms){await sleep(ms);while(!vis||document.hidden)await sleep(300)}
+if('IntersectionObserver' in window){new IntersectionObserver(es=>{vis=es[0].isIntersecting;if(vis&&!seen){seen=true;wave()}},{threshold:.4}).observe(b)}
+(async function loop(){
+ await wait(2600);
+ for(;;){k=(k+1)%MSGS.length;const t=MSGS[k];
+  if(still){bm.textContent=t;await wait(5200);continue}
+  bm.innerHTML='<span class="dots"><i></i><i></i><i></i></span>';b.classList.add('think');await wait(650);b.classList.remove('think');
+  b.classList.add('talk');bub.classList.add('cur');
+  for(let i=1;i<=t.length;i++){bm.textContent=t.slice(0,i);await wait(26)}
+  b.classList.remove('talk');bub.classList.remove('cur');
+  if(k%3===0){mood('happy',1200)}
+  await wait(3000+t.length*35)}
+})();
+b.addEventListener('click',()=>{wave();mood('happy',900)});
 b.addEventListener('pointerenter',()=>b.classList.add('happy'));b.addEventListener('pointerleave',()=>b.classList.remove('happy'));
-if('IntersectionObserver' in window){const io=new IntersectionObserver(es=>{if(es[0].isIntersecting){wave();io.disconnect()}},{threshold:.6});io.observe(b)}
 if(!still)(function bl(){setTimeout(()=>{b.classList.add('blink');setTimeout(()=>b.classList.remove('blink'),130);bl()},2500+Math.random()*2500)})();
 })();
 (function(){const el=document.getElementById('wk');if(!el||still)return;let n=0;setInterval(()=>{if(document.hidden)return;n+=1+Math.floor(Math.random()*3);el.textContent=n},700)})();
@@ -843,6 +929,20 @@ const t0=performance.now();
 
 (function(){const w=document.getElementById('igw'),a=document.getElementById('ig');if(w&&a&&CFG.ig){a.href=CFG.ig;a.target='_blank';a.rel='noopener';w.hidden=false}})();
 (function(){const d=document.getElementById('terminos');if(!d)return;document.querySelectorAll('[data-tos]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();d.showModal?d.showModal():d.setAttribute('open','')}))})();
+(function(){const g=document.getElementById('pgrid');if(!g||still||!('IntersectionObserver' in window))return;g.classList.add('rvp');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){g.classList.add('in');o.disconnect()}}),{threshold:.12}).observe(g)})();
+(function(){const r=document.getElementById('stp');if(!r)return;
+const tabs=[...r.querySelectorAll('[role=tab]')],pan=[...r.querySelectorAll('.stp-p')],line=r.querySelector('.stp-line'),pv=document.getElementById('stpP'),nx=document.getElementById('stpN'),ct=document.getElementById('stpC');
+let cur=0,auto=!still,seen=false,timer=0;
+function go(i,user){if(user){auto=false;clearInterval(timer)}cur=Math.max(0,Math.min(4,i));
+ tabs.forEach((t,n)=>{const on=n===cur;t.setAttribute('aria-selected',on);t.tabIndex=on?0:-1;t.classList.toggle('done',n<cur)});
+ pan.forEach((p,n)=>p.classList.toggle('on',n===cur));
+ line.style.setProperty('--p',cur/4*100);ct.textContent='Paso '+(cur+1)+' de 5';pv.disabled=cur===0;nx.disabled=cur===4}
+tabs.forEach((t,n)=>{t.addEventListener('click',()=>go(n,true));
+ t.addEventListener('keydown',e=>{let k=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!k)return;e.preventDefault();go(cur+k,true);tabs[cur].focus()})});
+pv.addEventListener('click',()=>go(cur-1,true));nx.addEventListener('click',()=>go(cur+1,true));
+go(0);
+if(auto&&'IntersectionObserver' in window)new IntersectionObserver(es=>{if(es[0].isIntersecting&&!seen&&auto){seen=true;timer=setInterval(()=>{if(!auto||document.hidden)return;if(cur>=4){clearInterval(timer);return}go(cur+1)},4200)}},{threshold:.5}).observe(r)})();
 </script>
 </body>
 </html>
